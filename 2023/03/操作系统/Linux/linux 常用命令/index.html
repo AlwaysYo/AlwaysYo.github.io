@@ -1,0 +1,388 @@
+<!DOCTYPE html><html lang="zh-CN" theme="light"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="张小剩"><title>Linux 命令总结 · 张小剩的博客</title><meta name="description" content="[ 命令格式 ]
+
+命令 [ 选项 ][ 参数 ]
+例： ls -la &amp;#x2F;home
+
+目录处理命令
+ls
+
+原意： list
+功能： 显示目录文件
+选项： -a： 显示所有文件(all)，-l： 显示详细信息(long)
+参数： 路径（非必填）
+语法： ls -la &amp;#x2F;home
+"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta id="site_data_static" data-url="/"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/assets/icon/favicon_1.ico"><link rel="stylesheet" href="/js_complied/bundle.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"><script src="/js_complied/bundle.js"></script><script src="/js/baidu-tongji.js"></script><script>Anatolo.comment.setConfig({"valine":{"enable":false,"appid":null,"appkey":null,"notify":false,"verify":false,"avatar":"mm","placeholder":"hello, world"},"gitment":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"gitalk":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"duoshuo":null,"disqus":null,"gentie":null})</script><meta name="generator" content="Hexo 7.3.0"></head><body><main-outlet><div class="page-top animated"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="nav_right_btn"><li class="btn-toggle-more"><i class="fa fa-ellipsis"></i></li><li class="btn-go-back"><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li class="btn-search"><a class="fa fa-search" onclick="Anatolo.search.openWindow();"></a></li><li class="btn-toggle-theme"><a class="far fa-sun" onclick="Anatolo.toggleDarkLightTheme();"></a></li></div><div class="avatar"><img src="/assets/images/Avatar_20250419_300889.jpg"></div></div></div><div class="sidebar animated"><div class="sidebar-top"><div class="logo-title"><div class="title"><div class="logo" style="width:220px;height:220px;"><div class="polygon-box1"><div class="polygon-box2"><img class="polygon-img" src="/assets/images/Avatar_20250419_300889.jpg" alt="logo"></div></div></div><h3 title="" style="margin: 2rem"><a href="/">张小剩的博客</a></h3><div class="description"><p>折腾是一种乐趣，求知是一种追求！</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/alwaysyo"><i class="fab fa-github"></i></a></li><li><a href="mailto:zhxy_chn@126.com"><i class="fa fa-envelope"></i></a></li><li><a href><i class="fa fa-rss"></i></a></li></ul><div class="blog-time"><div id="clock-container"><canvas id="canvas-time" style="width: 80%; margin-top: 2em" width="700"></canvas></div><script type="text/javascript" charset="utf-8" src="/js/digit-time.js"></script><div class="footer-aside-box description" style="font-size: 12px; margin: 0.5em"><i class="fa fa-cog fa-spin"></i><span id="runtime"></span><script type="text/javascript" charset="utf-8" src="/js/run-time.js"></script></div></div></div></div><div class="footer"><div class="p"><span style="margin-right: 5px">全站 CC-BY-SA-3.0</span><i class="fa fa-star"></i><span style="margin-left: 5px">张小剩</span></div><div class="by_farbox"><span style="margin-right: 5px">Powered by</span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo</a><span style="margin-right: 5px; margin-left: 5px">& Theme modified from</span><a href="https://github.com/Lhcfl/hexo-theme-anatolo" target="_blank">Anatolo</a></div><div class="beian"></div></div></div><div class="main animated fadeInDown"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated"><div class="post-title"><h3><a>Linux 命令总结</a></h3></div><div class="post-content"><p><p><strong>[ 命令格式 ]</strong></p>
+<ul>
+<li>命令 [ 选项 ][ 参数 ]</li>
+<li>例： ls -la &#x2F;home</li>
+</ul>
+<h3 id="目录处理命令"><a href="#目录处理命令" class="headerlink" title="目录处理命令"></a>目录处理命令</h3><ul>
+<li><p>ls</p>
+<ul>
+<li>原意： list</li>
+<li>功能： 显示目录文件</li>
+<li>选项： -a： 显示所有文件(all)，-l： 显示详细信息(long)</li>
+<li>参数： 路径（非必填）</li>
+<li>语法： ls -la &#x2F;home</li>
+</ul>
+</li>
+<li><p>cd</p>
+<ul>
+<li>原意： change directory</li>
+<li>功能： 切换目录</li>
+<li>参数： 路径</li>
+<li>语法： cd &#x2F;home (绝对路径) 或者 cd admin (相对路径)</li>
+</ul>
+</li>
+<li><p>pwd</p>
+<ul>
+<li>原意： print working directory</li>
+<li>功能： 显示当前目录</li>
+<li>语法： pwd</li>
+</ul>
+</li>
+<li><p>mkdir</p>
+<ul>
+<li>原意： make directories</li>
+<li>功能： 创建空目录</li>
+<li>选项： -p： 递归创建(可以创建不存在的目录，如： &#x2F;home&#x2F;admin&#x2F;document&#x2F;work)</li>
+<li>参数： 目录名</li>
+<li>语法： mkdir -p [目录名]</li>
+</ul>
+</li>
+<li><p>cp</p>
+<ul>
+<li>原意： copy</li>
+<li>功能： 复制文件或目录</li>
+<li>选项： -r： 复制目录，-p： 保留文件属性 copy(保留创建时间等)</li>
+<li>参数： [原文件或目录][目标目录]</li>
+<li>语法： cp -rp [原文件或目录][目标目录]</li>
+</ul>
+</li>
+<li><p>mv</p>
+<ul>
+<li>原意： move</li>
+<li>功能： 剪切文件或者改文件名</li>
+<li>参数： [原文件或目录][目标目录] 或者 [原文件名][修改文件名]</li>
+<li>语法： mv [原文件或目录][目标目录]</li>
+</ul>
+</li>
+<li><p>rm</p>
+<ul>
+<li>原意： remove</li>
+<li>功能： 删除文件或目录</li>
+<li>选项： -r： 删除目录，-f： 强制删除</li>
+<li>参数： 文件或目录</li>
+<li>语法： rm -rf [文件或目录] &#x3D;&#x3D;&gt; 强制删除</li>
+</ul>
+</li>
+<li><p>rmdir</p>
+<ul>
+<li>原意： remove empty directories</li>
+<li>功能： 删除空目录</li>
+<li>语法： rmdir [空目录]</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件处理命令"><a href="#文件处理命令" class="headerlink" title="文件处理命令"></a>文件处理命令</h3><ul>
+<li><p>touch</p>
+<ul>
+<li>功能： 创建空文件</li>
+<li>语法： touch [文件名]</li>
+</ul>
+</li>
+<li><p>cat</p>
+<ul>
+<li>功能： 显示文件内容</li>
+<li>选项： -n 显示行号</li>
+<li>语法： cat [文件名]</li>
+</ul>
+</li>
+<li><p>tac</p>
+<ul>
+<li>功能： 反向显示文件内容</li>
+<li>选项： -n 显示行号</li>
+<li>语法： tac [文件名]</li>
+</ul>
+</li>
+<li><p>more</p>
+<ul>
+<li>功能： 分页显示文件内容</li>
+<li>语法： more [文件名]</li>
+<li>操作： 空格 &#x3D;&gt; 换页; Enter &#x3D;&gt; 换行; Q &#x3D;&gt; 退出; （B &#x3D;&gt; 上翻）</li>
+</ul>
+</li>
+<li><p>ln</p>
+<ul>
+<li>原意： link</li>
+<li>功能： 创建软链接(快捷方式)或硬链接(复制文件，文件内容动态变化)</li>
+<li>选项： -s： 创建软链接</li>
+<li>语法： ln -s [原文件或目录][目标文件或目录] &#x3D;&#x3D;&gt; 软链接; ln [原文件或目录][目标文件或目录] &#x3D;&#x3D;&gt; 硬链接;</li>
+</ul>
+</li>
+<li><p>less</p>
+<ul>
+<li>功能： 分页显示文件内容</li>
+<li>语法： less [文件名]</li>
+<li>操作： 空格 &#x3D;&gt; 换页; Enter &#x3D;&gt; 换行; Q &#x3D;&gt; 退出; B &#x3D;&gt; 向上翻页</li>
+</ul>
+</li>
+<li><p>head</p>
+<ul>
+<li>功能： 显示文件前面几行</li>
+<li>选项： -n： 指定行数</li>
+<li>语法： head -n 10 [文件名]</li>
+</ul>
+</li>
+<li><p>tail</p>
+<ul>
+<li>功能： 显示文件后面几行</li>
+<li>选项： -n： 指定行数; -f： 动态显示文件末尾的内容</li>
+<li>语法： tail -n 10 [文件名]</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件搜索命令"><a href="#文件搜索命令" class="headerlink" title="文件搜索命令"></a>文件搜索命令</h3><ul>
+<li><p>find</p>
+<ul>
+<li>功能： 文件搜索</li>
+<li>语法： find [搜素范围][匹配条件] [搜素内容]</li>
+<li>例： find &#x2F;home -name log.md (搜素 log.md 文件)<blockquote>
+<p>[ 匹配条件 ]</p>
+<ul>
+<li><p>name： 名称搜素</p>
+</li>
+<li><p>size： 文件大小搜素(按块搜素，1 块 &#x3D; 0.5k，00M &#x3D; 204800 块)</p>
+</li>
+<li><p>+n(+204800) 大于 204800</p>
+</li>
+<li><p>-n</p>
+</li>
+<li><p>n 等于</p>
+</li>
+<li><p>type： 文件类型</p>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>grep</p>
+<ul>
+<li>功能： 在文件中搜索字符串匹配的行并输出</li>
+<li>选项： -i 不区分大小写; -v 排除指定字符串</li>
+<li>语法： grep -iv [指定字符串][文件]</li>
+</ul>
+</li>
+<li><p>locate</p>
+<ul>
+<li>功能： 在文件资料库中查找文件</li>
+<li>语法： locate [文件名]</li>
+</ul>
+</li>
+<li><p>which</p>
+<ul>
+<li>功能： 搜索命令所在目录及别名信息</li>
+<li>语法： which [命令]</li>
+</ul>
+</li>
+<li><p>whereis</p>
+<ul>
+<li>功能： 搜索命令所在目录以及帮助文档路径</li>
+<li>语法： whereis [命令]</li>
+</ul>
+</li>
+</ul>
+<h3 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h3><ul>
+<li>man<ul>
+<li>功能： 获取帮助信息</li>
+<li>语法： man [命令或帮助文件]</li>
+</ul>
+</li>
+<li>help<ul>
+<li>功能： 获取 shell 内置命令的帮助信息</li>
+<li>语法： help [内置命令]</li>
+</ul>
+</li>
+</ul>
+<h3 id="权限管理命令"><a href="#权限管理命令" class="headerlink" title="权限管理命令"></a>权限管理命令</h3><ul>
+<li>chmod<ul>
+<li>原意： change mode</li>
+<li>功能： 改变文件或目录的权限</li>
+<li>语法： chmod [ugoa+-&#x3D;rwx][文件或目录]</li>
+<li>例： chmod u-r [文件或目录] &#x3D;&gt; 对文件的所属者去掉 r 权限</li>
+<li>语法： chmod [mode &#x3D; 777][文件或目录] &#x3D;&gt; 给文件设置所有的用户拥有全部的权限</li>
+<li>例： chmod 764 [文件或目录]</li>
+<li>执行权限： 所有用户</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>[ u，g，o，a 分别代表用户 ]</strong></p>
+<ul>
+<li>u： User 所属者</li>
+<li>g： Group 用户组</li>
+<li>o： Other 其他用户</li>
+<li>a： all 所有人</li>
+</ul>
+<p><strong>[ r，w，x 分别代表权限 ]</strong></p>
+<ul>
+<li>r： read 读权限<ul>
+<li>用数字表示 4</li>
+</ul>
+</li>
+<li>w： write 写权限<ul>
+<li>用数字表示 2</li>
+</ul>
+</li>
+<li>x： 执行权限<ul>
+<li>用数字表示 1</li>
+</ul>
+</li>
+<li>每一个文件或目录都会用 rwxrwxrwx 来显示 ugo 三者的权限(顺序不可变)</li>
+<li>例： rwxrw-r– 指的是 u 拥有所有的权限，g 拥有读写的权限，o 只拥有&gt;读的权限<ul>
+<li>用数字表示： 764（4+2+1，4+2，4）</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>chown<ul>
+<li>原意： change file ownership</li>
+<li>功能： 改变文件或目录的所属者</li>
+<li>语法： chown [用户][文件&#x2F;目录]</li>
+<li>执行权限： root</li>
+</ul>
+</li>
+<li>umask<ul>
+<li>命令英文原意： the user file-creation mask</li>
+<li>显示、设置文件的缺省权限(默认权限)</li>
+<li>执行权限： 所有用户</li>
+<li>语法： umask [-S] -S 以 rwx 形式显示新建文件的缺省权限</li>
+</ul>
+</li>
+</ul>
+<h3 id="用户管理命令"><a href="#用户管理命令" class="headerlink" title="用户管理命令"></a>用户管理命令</h3><ul>
+<li>useradd<ul>
+<li>功能： 添加新用户</li>
+<li>执行权限： root</li>
+</ul>
+</li>
+<li>passwd<ul>
+<li>功能： 修改密码</li>
+</ul>
+</li>
+<li>who<ul>
+<li>功能： 查看登录用户信息</li>
+</ul>
+</li>
+<li>w<ul>
+<li>功能： 当前用户详细信息</li>
+</ul>
+</li>
+</ul>
+<h3 id="压缩解压命令"><a href="#压缩解压命令" class="headerlink" title="压缩解压命令"></a>压缩解压命令</h3><ul>
+<li>tar<ul>
+<li>功能： 打包文件或目录</li>
+<li>说明： <strong>结合 gzip 命令</strong></li>
+<li>语法： tar -zcf 新的文件名.tar.gz [目标文件或目录] &#x3D;&#x3D;&gt;直接打包压缩</li>
+<li>解压： tar -zxf 文件名.tar.gz</li>
+</ul>
+</li>
+<li>zip<ul>
+<li>功能： 压缩文件或目录</li>
+<li>选项： -r 压缩目录</li>
+<li>语法： zip [新的文件名][目标文件或目录]</li>
+<li>解压： unzip [压缩文件名.zip]</li>
+</ul>
+</li>
+<li>bzip2<ul>
+<li>功能： 打包文件()</li>
+<li>选项： -k 保留原文件</li>
+<li>说明： <strong>结合 tar 命令使用</strong></li>
+<li>语法： tar -cjf 新的文件名.tar.bz2 [目标文件或目录] &#x3D;&#x3D;&gt;直接打包压缩</li>
+<li>解压： tar -xjf 文件名.tar.bz2</li>
+</ul>
+</li>
+</ul>
+<h3 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h3><ul>
+<li>ping<ul>
+<li>功能： 测试网络连通性</li>
+<li>语法： ping [ip 地址]</li>
+</ul>
+</li>
+<li>last<ul>
+<li>功能： 列出目前和过去登入系统的用户信息</li>
+<li>语法： last</li>
+</ul>
+</li>
+<li>traceroute<ul>
+<li>功能： 显示数据包到主机间的路径</li>
+<li>语法： traceroute [ip 地址 或 域名]</li>
+</ul>
+</li>
+<li>netstat<ul>
+<li>功能： 显示网络相关信息</li>
+<li>语法： netstat</li>
+</ul>
+</li>
+<li>steup<ul>
+<li>功能： 配置网络</li>
+<li>语法： steup</li>
+</ul>
+</li>
+<li>write<ul>
+<li>功能： 给用户发信息</li>
+<li>语法： write [用户名]</li>
+</ul>
+</li>
+<li>wall<ul>
+<li>功能： 发广播信息</li>
+<li>语法： wall</li>
+</ul>
+</li>
+<li>mail<ul>
+<li>功能： 发送电子邮件</li>
+<li>语法： mail [用户名]</li>
+</ul>
+</li>
+</ul>
+<h3 id="关机重启命令"><a href="#关机重启命令" class="headerlink" title="关机重启命令"></a>关机重启命令</h3><ul>
+<li><p>shutdown [选项] now(时间)</p>
+<ul>
+<li>-c 取消</li>
+<li>-h 关机</li>
+<li>-r 重启</li>
+</ul>
+</li>
+<li><p>其他关机</p>
+<ul>
+<li>halt</li>
+<li>poweroff</li>
+<li>init 0</li>
+</ul>
+</li>
+<li><p>其他重启</p>
+<ul>
+<li>reboot</li>
+<li>init 6</li>
+</ul>
+</li>
+<li><p>扩展</p>
+</li>
+<li><p>0 –&gt; 关机</p>
+</li>
+<li><p>1 –&gt; 单用户</p>
+</li>
+<li><p>2 –&gt; 不完全多用户，不含 nfs 服务</p>
+</li>
+<li><p>3 –&gt; 完全多用户</p>
+</li>
+<li><p>4 –&gt; 未分配</p>
+</li>
+<li><p>5 –&gt; 图形界面</p>
+</li>
+<li><p>6 –&gt; 重启</p>
+</li>
+</ul>
+</p></div><div class="post-footer"><div class="tip">本文采用 CC-BY-SA-3.0 协议，转载请注明出处<br>作者: 张小剩</div><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-03-23</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Linux/" title="Linux">Linux </a><i class="fa fa-tag"></i><a class="tag" href="/tags/操作系统/" title="操作系统">操作系统 </a><span>大约1817个字, 6分钟3秒读完</span></div></div></div></div><div class="share"><div class="share-btn linkonly"><a class="fa fa-link" onclick="Utils.copyToClipboard(window.location.href)" ref="sidebar"></a></div><div class="share-btn evernote"><a class="fa fa-share" onclick="Anatolo.share.native()" ref="sidebar"></a></div><div class="share-btn weibo"><a class="fab fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="share-btn twitter"><a class="fab fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/intent/tweet?text=%E5%88%86%E4%BA%AB%E6%96%87%E7%AB%A0%EF%BC%9A%0A%0A%E5%BC%A0%E5%B0%8F%E5%89%A9%E7%9A%84%E5%8D%9A%E5%AE%A2%20%C2%B7%20Linux%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93%0Ahttp://example.com/2023/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/linux%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/%0A"></a></div><div class="share-btn mastodon"><a class="fab fa-mastodon" target="_blank" rel="noopener" href="https://mastodonshare.com/?text=%E5%88%86%E4%BA%AB%E6%96%87%E7%AB%A0%EF%BC%9A%0A%0A%E5%BC%A0%E5%B0%8F%E5%89%A9%E7%9A%84%E5%8D%9A%E5%AE%A2%20%C2%B7%20Linux%20%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93%0Ahttp://example.com/2023/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/linux%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/%0A"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/03/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/github%20+%20hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="github + hexo 搭建个人博客">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%9F%A5%E8%AF%86%E6%9E%B6%E6%9E%84%E4%BD%93%E7%B3%BB/" title="软件测试知识架构体系">下一篇</a></li></ul></div><script>Anatolo.comment.setConfig({"valine":{"enable":false,"appid":null,"appkey":null,"notify":false,"verify":false,"avatar":"mm","placeholder":"hello, world"},"gitment":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"gitalk":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"duoshuo":null,"disqus":null,"gentie":null})</script></div></div></div></div></main-outlet><script>(async function(){ if (Anatolo.search == null) await Anatolo.getMsg("search-init"); Anatolo.search.config = {translation:{posts:"文章",pages:"页面",categories:"分类",tags:"标签",untitled:"(无标题)",} }; })()</script><div class="searchbox ins-search modal-cover"><div class="searchbox-container ins-search-container modal-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="Anatolo.search.closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div><button class="float-button hide" id="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" type="button" title="回到顶部"><i class="fa fa-angle-up"></i></button><div class="modal-cover" id="success-indicator"><div class="modal-container indicator"><i class="fa fa-check"></i></div></div></body></html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="zh-CN" theme="light"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="张小剩"><title>测试系统工程师（TSE）技术大纲 · 张小剩的博客</title><meta name="description" content="TSE-业务知识技术架构前端技术架构（☆）
+html , css javascript
+vue 全家桶： vue, vue-router, vuex, vue-resource
+环境搭建： node.js, npm
+开发工具： vs-code
+
+服务端架构
+架构模式（☆☆☆）: 分布式， 集群， 冗"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta id="site_data_static" data-url="/"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/assets/icon/favicon_1.ico"><link rel="stylesheet" href="/js_complied/bundle.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"><script src="/js_complied/bundle.js"></script><script src="/js/baidu-tongji.js"></script><script>Anatolo.comment.setConfig({"valine":{"enable":false,"appid":null,"appkey":null,"notify":false,"verify":false,"avatar":"mm","placeholder":"hello, world"},"gitment":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"gitalk":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"duoshuo":null,"disqus":null,"gentie":null})</script><meta name="generator" content="Hexo 7.3.0"></head><body><main-outlet><div class="page-top animated"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="nav_right_btn"><li class="btn-toggle-more"><i class="fa fa-ellipsis"></i></li><li class="btn-go-back"><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li class="btn-search"><a class="fa fa-search" onclick="Anatolo.search.openWindow();"></a></li><li class="btn-toggle-theme"><a class="far fa-sun" onclick="Anatolo.toggleDarkLightTheme();"></a></li></div><div class="avatar"><img src="/assets/images/Avatar_20250419_300889.jpg"></div></div></div><div class="sidebar animated"><div class="sidebar-top"><div class="logo-title"><div class="title"><div class="logo" style="width:220px;height:220px;"><div class="polygon-box1"><div class="polygon-box2"><img class="polygon-img" src="/assets/images/Avatar_20250419_300889.jpg" alt="logo"></div></div></div><h3 title="" style="margin: 2rem"><a href="/">张小剩的博客</a></h3><div class="description"><p>折腾是一种乐趣，求知是一种追求！</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/alwaysyo"><i class="fab fa-github"></i></a></li><li><a href="mailto:zhxy_chn@126.com"><i class="fa fa-envelope"></i></a></li><li><a href><i class="fa fa-rss"></i></a></li></ul><div class="blog-time"><div id="clock-container"><canvas id="canvas-time" style="width: 80%; margin-top: 2em" width="700"></canvas></div><script type="text/javascript" charset="utf-8" src="/js/digit-time.js"></script><div class="footer-aside-box description" style="font-size: 12px; margin: 0.5em"><i class="fa fa-cog fa-spin"></i><span id="runtime"></span><script type="text/javascript" charset="utf-8" src="/js/run-time.js"></script></div></div></div></div><div class="footer"><div class="p"><span style="margin-right: 5px">全站 CC-BY-SA-3.0</span><i class="fa fa-star"></i><span style="margin-left: 5px">张小剩</span></div><div class="by_farbox"><span style="margin-right: 5px">Powered by</span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo</a><span style="margin-right: 5px; margin-left: 5px">& Theme modified from</span><a href="https://github.com/Lhcfl/hexo-theme-anatolo" target="_blank">Anatolo</a></div><div class="beian"></div></div></div><div class="main animated fadeInDown"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated"><div class="post-title"><h3><a>测试系统工程师（TSE）技术大纲</a></h3></div><div class="post-content"><p><h2 id="TSE-业务知识"><a href="#TSE-业务知识" class="headerlink" title="TSE-业务知识"></a>TSE-业务知识</h2><h3 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h3><h4 id="前端技术架构（☆）"><a href="#前端技术架构（☆）" class="headerlink" title="前端技术架构（☆）"></a>前端技术架构（☆）</h4><ul>
+<li>html , css javascript</li>
+<li>vue 全家桶： vue, vue-router, vuex, vue-resource</li>
+<li>环境搭建： node.js, npm</li>
+<li>开发工具： vs-code</li>
+</ul>
+<h4 id="服务端架构"><a href="#服务端架构" class="headerlink" title="服务端架构"></a>服务端架构</h4><ul>
+<li>架构模式（☆☆☆）: 分布式， 集群， 冗余， 缓存等 </li>
+<li>架构要素（☆☆☆）: 性能， 可用性， 伸缩性， 扩展性， 安全性等 </li>
+<li>高性能架构（☆☆☆）: 特点， 应用场景， 当前产品存在问题， 优化方案等</li>
+<li>高可用架构（☆☆☆）: 特点， 应用场景， 当前产品存在问题， 优化方案等 </li>
+<li>伸缩性架构（☆☆☆）: 特点， 应用场景， 当前产品存在问题， 优化方案等 </li>
+<li>可扩展架构（☆☆☆）: 特点， 应用场景， 当前产品存在问题， 优化方案等 </li>
+<li>安全架构（☆）: 特点， 应用场景， 当前产品存在问题， 优化方案等 </li>
+<li>主流分布式架构</li>
+<li>Spring Cloud（☆☆☆）</li>
+<li>Dubbo（☆）</li>
+</ul>
+<h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><h5 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h5><ul>
+<li>索引： （☆☆☆☆☆） 索引介绍， 原理， 组合索引， 索引分析 </li>
+<li>架构： （☆☆☆） 逻辑架构， 物理架构， 执行流程 </li>
+<li>锁： （☆☆☆）表的介绍和分类， 表锁， 行锁， 数据锁 </li>
+<li>事务： （☆☆☆☆☆）事务的介绍， ACID 特性及原理， 事务并发， 事务隔离， 行锁和死锁原理分析 </li>
+<li>SQL 语句：（☆☆☆☆☆）常用增删改查，关键字和内置函数 </li>
+<li>集群： （☆☆☆）主从复制， 读写分离的原理和实现 </li>
+<li>分库分表（☆☆☆☆☆）分库分表概念， 数据切分概念， 分库分表问题， 分库分表实现方案 </li>
+<li>性能分析 &amp; 性能优化（☆☆☆☆☆）</li>
+<li>性能分析： 慢查询日志， profile 分析</li>
+<li>性能优化： 连接池 &amp; 连接数，表设计， SQL 语句优化</li>
+</ul>
+<h5 id="Elasticsearch"><a href="#Elasticsearch" class="headerlink" title="Elasticsearch"></a>Elasticsearch</h5><ul>
+<li>基础认知（☆☆☆☆☆）</li>
+<li>集群部署（☆☆☆）</li>
+<li>查询（☆☆☆☆☆）</li>
+<li>聚集（☆☆☆）</li>
+<li>分析（☆☆☆）</li>
+<li>数据同步（☆）</li>
+<li>JAVA API（☆）</li>
+<li>性能测试（☆☆☆）</li>
+<li>数据迁移（☆）</li>
+<li>应用场景 &amp; 架构设计（☆☆☆☆☆）</li>
+</ul>
+<h4 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h4><blockquote>
+<p>特别关注：</p>
+<ol>
+<li><p>技术选型如何做， 优缺点？</p>
+</li>
+<li><p>消息队列的概念， 目的， 应用场景</p>
+</li>
+</ol>
+</blockquote>
+<h5 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h5><ul>
+<li>基础知识（☆☆☆☆☆）生产者，消费者， 队列， 交换器， 运转流程</li>
+<li>Exchange 类型（☆☆☆☆☆）direct, topic, headers, fanout, alternate</li>
+<li>6 种工作模式（☆☆☆） work queues, publish &#x2F; subscribe, route, rpc, topic, publish confirms</li>
+<li>高级特性（☆☆☆）</li>
+<li>生产者： confirms</li>
+<li>消费者： ack, prefetch, concurrency, retry</li>
+<li>队列：死信队列、延迟队列、优先级队列、队列过期 TTL、Length Limit </li>
+<li>集群（☆☆☆）</li>
+<li>队列分片（☆）</li>
+<li>插件运用（☆）</li>
+<li>RabbitMQ-management</li>
+<li>RabbitMQ-tracing</li>
+<li>RabbitMQ-federation</li>
+<li>RabbitMQ-sharding</li>
+<li>思考（☆☆☆☆☆）</li>
+<li>怎么提高吞吐量？</li>
+<li>怎么保证消息顺序性？</li>
+<li>怎么防止消息丢失?</li>
+<li>怎么防止重复消费？</li>
+</ul>
+<h5 id="RocketMQ"><a href="#RocketMQ" class="headerlink" title="RocketMQ"></a>RocketMQ</h5><ul>
+<li>阿里开源的， 参考 RabbitMQ 大纲</li>
+</ul>
+<h5 id="ActiveMQ"><a href="#ActiveMQ" class="headerlink" title="ActiveMQ"></a>ActiveMQ</h5><ul>
+<li>参考 RabbitMQ 大纲， 关注差异点</li>
+</ul>
+<h5 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h5><ul>
+<li>基础知识（☆☆☆☆☆）基本术语、消息引擎基础、角色定位 、版本选择 </li>
+<li>生产者（☆☆☆☆☆）分区机制 、压缩算法、无消息丢失配置 、高级功能 、TCP 连接管理、幂等性 </li>
+<li>消费者（☆☆☆☆☆）消费者组 、位移主题 、Rebalance 、位移提交、异常处理 、group 监控 </li>
+<li>原理（☆☆☆）备份机制、请求处理 、Rebalance 全流程解析 、controller 、高水位</li>
+</ul>
+<h4 id="反向代理-负载均衡"><a href="#反向代理-负载均衡" class="headerlink" title="反向代理&#x2F;负载均衡"></a>反向代理&#x2F;负载均衡</h4><h5 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h5><ul>
+<li>代理（☆☆☆☆☆）代理， 正向代理， 反向代理的概念和区别？ </li>
+<li>nginx 是什么？（☆☆☆☆☆）</li>
+<li>为什么用 nginx ?（☆☆☆☆☆）</li>
+<li>nginx 性能为什么高（☆☆☆☆☆）</li>
+<li>nginx 环境搭建（☆☆☆☆☆）nginx 搭建， 热加载， 启动， 停止， 重启等 </li>
+<li>nginx 主配置文件（☆☆☆☆☆）</li>
+<li>事件模型（☆）select, poll, epoll, kqueue 等</li>
+<li>nginx 进程（☆☆☆）master 进程， worker 进程 </li>
+<li>常见优化（☆☆☆）</li>
+</ul>
+<h4 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h4><h5 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h5><ul>
+<li>基础知识（☆☆☆☆☆）Redis 介绍 、优缺点 、数据结构 、Java 客户端 、管道 、事务 </li>
+<li>失效机制（☆☆☆☆☆）</li>
+<li>应用场景</li>
+<li>缓存（☆☆☆☆☆）</li>
+<li>分布式锁（☆）</li>
+<li>发布 &#x2F; 订阅（☆）</li>
+<li>队列（☆）</li>
+<li>排行榜计算（☆）</li>
+<li>持久化（☆）RDB 机制 、AOF 机制 、RDB + AOF 混用机制 </li>
+<li>集群 &#x2F; 分布式（☆☆☆）全量复制， 部分复制、主从复制 、哨兵 、集群</li>
+</ul>
+<h2 id="TSE-通用知识"><a href="#TSE-通用知识" class="headerlink" title="TSE-通用知识"></a>TSE-通用知识</h2><h3 id="编码能力"><a href="#编码能力" class="headerlink" title="编码能力"></a>编码能力</h3><h4 id="开发语言-JAVA（☆☆☆☆☆）"><a href="#开发语言-JAVA（☆☆☆☆☆）" class="headerlink" title="开发语言 JAVA（☆☆☆☆☆）"></a>开发语言 JAVA（☆☆☆☆☆）</h4><ol>
+<li>面向对象语言概念</li>
+<li>语法基础</li>
+<li>面向对象的特性：继承、封装、多态</li>
+<li>集合</li>
+<li>异常处理</li>
+<li>IO</li>
+<li>多线程</li>
+<li>网络</li>
+<li>泛型</li>
+<li>JDK 常用类、接口、注解</li>
+</ol>
+<h4 id="开发框架（☆☆☆）"><a href="#开发框架（☆☆☆）" class="headerlink" title="开发框架（☆☆☆）"></a>开发框架（☆☆☆）</h4><p>GitHub 项目练手</p>
+<h5 id="Spring-Boot"><a href="#Spring-Boot" class="headerlink" title="Spring Boot"></a>Spring Boot</h5><ul>
+<li>Spring Boot 介绍</li>
+<li>Spring Boot 、Spring MVC、Spring 的区别</li>
+<li>自动装配</li>
+<li>Spring Boot Starter</li>
+<li>Spring Data</li>
+<li>关键注解</li>
+<li>启动原理分析</li>
+<li>事务原理</li>
+</ul>
+<h5 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h5><ul>
+<li>ORM 框架是什么</li>
+<li>跟 JDBC 的区别</li>
+<li>配置文件</li>
+<li>核心 API</li>
+<li>缓存机制</li>
+<li>插件开发</li>
+<li>逆向工程</li>
+</ul>
+<h5 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h5><ul>
+<li>Maven 是什么</li>
+<li>Maven 的作用是什么</li>
+<li>构建过程： 清理、编译、测试、报告、打包、安装、部署</li>
+<li>POM</li>
+<li>Maven 工程目录结构</li>
+<li>坐标管理</li>
+<li>依赖管理</li>
+<li>仓库管理</li>
+<li>生命周期</li>
+<li>插件和目标</li>
+<li>继承</li>
+<li>聚合</li>
+</ul>
+<h4 id="开发集成工具"><a href="#开发集成工具" class="headerlink" title="开发集成工具"></a>开发集成工具</h4><h5 id="IntelliJ-IDEA（☆☆☆☆☆）"><a href="#IntelliJ-IDEA（☆☆☆☆☆）" class="headerlink" title="IntelliJ IDEA（☆☆☆☆☆）"></a>IntelliJ IDEA（☆☆☆☆☆）</h5><ul>
+<li>常用快捷键</li>
+<li>创建工程</li>
+<li>导入工程</li>
+<li>常用配置</li>
+</ul>
+<h5 id="Eclipse（☆）"><a href="#Eclipse（☆）" class="headerlink" title="Eclipse（☆）"></a>Eclipse（☆）</h5><h4 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h4><ol>
+<li>WEB&#x2F;H5：Selenium、WebDriver、Xpath</li>
+<li>app ： appium</li>
+<li>api： postman、httpclient、json</li>
+<li>TestNG</li>
+</ol>
+<h3 id="测试理论知识"><a href="#测试理论知识" class="headerlink" title="测试理论知识"></a>测试理论知识</h3><h4 id="测试策略（☆☆☆☆☆）"><a href="#测试策略（☆☆☆☆☆）" class="headerlink" title="测试策略（☆☆☆☆☆）"></a>测试策略（☆☆☆☆☆）</h4><ol>
+<li>需求分析</li>
+<li>风险评估</li>
+<li>测试范围评估</li>
+<li>测试方法敲定</li>
+<li>测试准入、准出标准</li>
+</ol>
+<h4 id="用例设计（☆☆☆☆☆）"><a href="#用例设计（☆☆☆☆☆）" class="headerlink" title="用例设计（☆☆☆☆☆）"></a>用例设计（☆☆☆☆☆）</h4><ol>
+<li>常用用例设计方法</li>
+<li>高质量用例设计方法和原则</li>
+</ol>
+<h4 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h4><h4 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h4><ul>
+<li>性能测试理论</li>
+<li>性能测试分类</li>
+<li>性能测试常用指标</li>
+<li>性能测试流程</li>
+</ul>
+<h4 id="工具-平台"><a href="#工具-平台" class="headerlink" title="工具&#x2F;平台"></a>工具&#x2F;平台</h4><ul>
+<li>Jmeter（☆☆☆☆☆） </li>
+<li>LoadRunner（☆） </li>
+<li>Locust（☆） </li>
+<li>Gatling（☆） </li>
+<li>nGrinder（☆）</li>
+</ul>
+<h4 id="项目实战（☆☆☆☆☆）"><a href="#项目实战（☆☆☆☆☆）" class="headerlink" title="项目实战（☆☆☆☆☆）"></a>项目实战（☆☆☆☆☆）</h4><ul>
+<li>性能测试需求分析</li>
+<li>性能测试计划</li>
+<li>性能测试方案</li>
+<li>性能测试场景数据建模</li>
+<li>脚本开发</li>
+</ul>
+<h4 id="性能监控（☆☆☆☆☆）"><a href="#性能监控（☆☆☆☆☆）" class="headerlink" title="性能监控（☆☆☆☆☆）"></a>性能监控（☆☆☆☆☆）</h4><h4 id="性能分析（☆☆☆☆☆）"><a href="#性能分析（☆☆☆☆☆）" class="headerlink" title="性能分析（☆☆☆☆☆）"></a>性能分析（☆☆☆☆☆）</h4><h4 id="性能优化（☆☆☆）"><a href="#性能优化（☆☆☆）" class="headerlink" title="性能优化（☆☆☆）"></a>性能优化（☆☆☆）</h4><h4 id="Java-虚拟机（☆☆☆☆☆）"><a href="#Java-虚拟机（☆☆☆☆☆）" class="headerlink" title="Java 虚拟机（☆☆☆☆☆）"></a>Java 虚拟机（☆☆☆☆☆）</h4><h4 id="安全测试（☆）"><a href="#安全测试（☆）" class="headerlink" title="安全测试（☆）"></a>安全测试（☆）</h4><ol>
+<li>基础知识</li>
+<li>Web 安全</li>
+<li>嵌入式安全</li>
+<li>工控安全</li>
+<li>移动安全</li>
+<li>系统安全</li>
+<li>反病毒</li>
+<li>云安全</li>
+</ol>
+<h3 id="开发设计模式-原则"><a href="#开发设计模式-原则" class="headerlink" title="开发设计模式&#x2F;原则"></a>开发设计模式&#x2F;原则</h3><h4 id="开发设计原则（☆☆☆）"><a href="#开发设计原则（☆☆☆）" class="headerlink" title="开发设计原则（☆☆☆）"></a>开发设计原则（☆☆☆）</h4><ol>
+<li>开闭原则</li>
+<li>依赖倒置原则</li>
+<li>单一职责原则</li>
+<li>迪米特法则（最少知道原则）</li>
+<li>接口隔离原则</li>
+<li>里氏替换原则</li>
+<li>合成复用原则</li>
+</ol>
+<h4 id="开发设计模式"><a href="#开发设计模式" class="headerlink" title="开发设计模式"></a>开发设计模式</h4><h5 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h5><ul>
+<li>工厂方法模式（☆☆☆）</li>
+<li>抽象工厂模式（☆☆☆）</li>
+<li>建造者模式（☆）</li>
+<li>原型模式（☆）</li>
+<li>单例模式（☆☆☆）</li>
+</ul>
+<h5 id="结构性模式"><a href="#结构性模式" class="headerlink" title="结构性模式"></a>结构性模式</h5><ul>
+<li>适配器模式（☆☆☆）</li>
+<li>桥接模式（☆）</li>
+<li>组合模式（☆）</li>
+<li>装饰器模式（☆☆☆）</li>
+<li>门面模式（☆）</li>
+<li>亨元模式（☆）</li>
+<li>代理模式（☆☆☆）</li>
+</ul>
+<h5 id="行为型模式"><a href="#行为型模式" class="headerlink" title="行为型模式"></a>行为型模式</h5><ul>
+<li>解释器模式（☆）</li>
+<li>模板方法模式（☆）</li>
+<li>责任链模式（☆）</li>
+<li>命令模式（☆）</li>
+<li>迭代器模式（☆）</li>
+<li>调节者模式（☆）</li>
+<li>备忘录模式（☆）</li>
+<li>观察者模式（☆）</li>
+<li>状态模式（☆）</li>
+<li>策略模式（☆）</li>
+<li>访问者模式（☆☆☆）</li>
+</ul>
+<h3 id="前沿技术"><a href="#前沿技术" class="headerlink" title="前沿技术"></a>前沿技术</h3><ol>
+<li>云原生（☆☆☆） </li>
+<li>DevOps（☆☆☆） </li>
+<li>人工智能（☆） </li>
+<li>敏捷开发模式（☆☆☆） </li>
+<li>持续集成&#x2F;交付（☆☆☆） </li>
+<li>容器化（☆☆☆） </li>
+<li>K8S</li>
+<li>Docker</li>
+</ol>
+<h2 id="TSE-软实力"><a href="#TSE-软实力" class="headerlink" title="TSE-软实力"></a>TSE-软实力</h2><ol>
+<li>TRIZ 创新思维（☆☆☆）</li>
+<li>模型思维（☆）</li>
+</ol>
+</p></div><div class="post-footer"><div class="tip">本文采用 CC-BY-SA-3.0 协议，转载请注明出处<br>作者: 张小剩</div><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-11-16</span><i class="fa fa-tag"></i><a class="tag" href="/tags/软件测试/" title="软件测试">软件测试 </a><span>大约2228个字, 7分钟25秒读完</span></div></div></div></div><div class="share"><div class="share-btn linkonly"><a class="fa fa-link" onclick="Utils.copyToClipboard(window.location.href)" ref="sidebar"></a></div><div class="share-btn evernote"><a class="fa fa-share" onclick="Anatolo.share.native()" ref="sidebar"></a></div><div class="share-btn weibo"><a class="fab fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="share-btn twitter"><a class="fab fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/intent/tweet?text=%E5%88%86%E4%BA%AB%E6%96%87%E7%AB%A0%EF%BC%9A%0A%0A%E5%BC%A0%E5%B0%8F%E5%89%A9%E7%9A%84%E5%8D%9A%E5%AE%A2%20%C2%B7%20%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88TSE%EF%BC%89%E6%8A%80%E6%9C%AF%E5%A4%A7%E7%BA%B2%0Ahttp://example.com/2024/11/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88TSE%EF%BC%89%E6%8A%80%E6%9C%AF%E5%A4%A7%E7%BA%B2/%0A"></a></div><div class="share-btn mastodon"><a class="fab fa-mastodon" target="_blank" rel="noopener" href="https://mastodonshare.com/?text=%E5%88%86%E4%BA%AB%E6%96%87%E7%AB%A0%EF%BC%9A%0A%0A%E5%BC%A0%E5%B0%8F%E5%89%A9%E7%9A%84%E5%8D%9A%E5%AE%A2%20%C2%B7%20%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88TSE%EF%BC%89%E6%8A%80%E6%9C%AF%E5%A4%A7%E7%BA%B2%0Ahttp://example.com/2024/11/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88TSE%EF%BC%89%E6%8A%80%E6%9C%AF%E5%A4%A7%E7%BA%B2/%0A"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2025/01/Hello%20World/" title="Hello World">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2024/10/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%B7%A5%E5%85%B7%E6%B5%81/Git/Git_%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/" title="Git 远程仓库">下一篇</a></li></ul></div><script>Anatolo.comment.setConfig({"valine":{"enable":false,"appid":null,"appkey":null,"notify":false,"verify":false,"avatar":"mm","placeholder":"hello, world"},"gitment":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"gitalk":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"duoshuo":null,"disqus":null,"gentie":null})</script></div></div></div></div></main-outlet><script>(async function(){ if (Anatolo.search == null) await Anatolo.getMsg("search-init"); Anatolo.search.config = {translation:{posts:"文章",pages:"页面",categories:"分类",tags:"标签",untitled:"(无标题)",} }; })()</script><div class="searchbox ins-search modal-cover"><div class="searchbox-container ins-search-container modal-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="Anatolo.search.closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div><button class="float-button hide" id="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" type="button" title="回到顶部"><i class="fa fa-angle-up"></i></button><div class="modal-cover" id="success-indicator"><div class="modal-container indicator"><i class="fa fa-check"></i></div></div></body></html>

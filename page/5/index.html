@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="zh-CN" theme="light"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="张小剩"><title>张小剩的博客</title><meta name="description" content="折腾是一种乐趣，求知是一种追求！"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta id="site_data_static" data-url="/"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/assets/icon/favicon_1.ico"><link rel="stylesheet" href="/js_complied/bundle.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"><script src="/js_complied/bundle.js"></script><script src="/js/baidu-tongji.js"></script><script>Anatolo.comment.setConfig({"valine":{"enable":false,"appid":null,"appkey":null,"notify":false,"verify":false,"avatar":"mm","placeholder":"hello, world"},"gitment":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"gitalk":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"duoshuo":null,"disqus":null,"gentie":null})</script><meta name="generator" content="Hexo 7.3.0"></head><body><main-outlet><div class="page-top animated"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="nav_right_btn"><li class="btn-toggle-more"><i class="fa fa-ellipsis"></i></li><li class="btn-search"><a class="fa fa-search" onclick="Anatolo.search.openWindow();"></a></li><li class="btn-toggle-theme"><a class="far fa-sun" onclick="Anatolo.toggleDarkLightTheme();"></a></li></div><div class="avatar"><img src="/assets/images/Avatar_20250419_300889.jpg"></div></div></div><div class="sidebar animated"><div class="sidebar-top"><div class="logo-title"><div class="title"><div class="logo" style="width:220px;height:220px;"><div class="polygon-box1"><div class="polygon-box2"><img class="polygon-img" src="/assets/images/Avatar_20250419_300889.jpg" alt="logo"></div></div></div><h3 title="" style="margin: 2rem"><a href="/">张小剩的博客</a></h3><div class="description"><p>折腾是一种乐趣，求知是一种追求！</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/alwaysyo"><i class="fab fa-github"></i></a></li><li><a href="mailto:zhxy_chn@126.com"><i class="fa fa-envelope"></i></a></li><li><a href><i class="fa fa-rss"></i></a></li></ul><div class="blog-time"><div id="clock-container"><canvas id="canvas-time" style="width: 80%; margin-top: 2em" width="700"></canvas></div><script type="text/javascript" charset="utf-8" src="/js/digit-time.js"></script><div class="footer-aside-box description" style="font-size: 12px; margin: 0.5em"><i class="fa fa-cog fa-spin"></i><span id="runtime"></span><script type="text/javascript" charset="utf-8" src="/js/run-time.js"></script></div></div></div></div><div class="footer"><div class="p"><span style="margin-right: 5px">全站 CC-BY-SA-3.0</span><i class="fa fa-star"></i><span style="margin-left: 5px">张小剩</span></div><div class="by_farbox"><span style="margin-right: 5px">Powered by</span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo</a><span style="margin-right: 5px; margin-left: 5px">& Theme modified from</span><a href="https://github.com/Lhcfl/hexo-theme-anatolo" target="_blank">Anatolo</a></div><div class="beian"></div></div></div><div class="main animated fadeInDown"><div class="autopagerize_page_element"><div class="content"><div class="post animated"><div class="post-title"><h3><a href="/2023/04/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/%E8%AF%AD%E9%9B%80%E6%96%87%E6%A1%A3%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5%20Hexo%20%E5%8D%9A%E5%AE%A2/">语雀文档自动同步 Hexo 博客</a></h3></div><div class="post-content"><p>
+本文的目的是实现 语雀文章 编辑发布后，调用 Serverless 触发**GitHub Actions** 自动同步到 github pages
+前提条件：已经利用 github pages 成功搭建博客（没有的可查看我的这篇文章：[《github + hexo 搭建个人博客》](https://www.yu...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-05</span><i class="fa fa-tag"></i><a class="tag" href="/tags/博客搭建/" title="博客搭建">博客搭建 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Hexo/" title="Hexo">Hexo </a><span>大约1104个字, 3分钟40秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2023/03/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/github%20+%20hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">github + hexo 搭建个人博客</a></h3></div><div class="post-content"><p>安装 Node.js首先下载稳定版
+下载 Node.js
+我这里给的是64位的。
+安装选项全部默认，一路点击Next。
+最后安装好之后，按Win+R打开命令提示符，输入node -v和npm -v，如果出现版本号，那么就安装成功了。
+添加国内镜像源如果没有梯子的话，可以使用阿里的国内镜像进行加速。
+1234567...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-03-26</span><i class="fa fa-tag"></i><a class="tag" href="/tags/博客搭建/" title="博客搭建">博客搭建 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Hexo/" title="Hexo">Hexo </a><span>大约1372个字, 4分钟34秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2023/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/linux%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Linux 命令总结</a></h3></div><div class="post-content"><p>[ 命令格式 ]
+
+命令 [ 选项 ][ 参数 ]
+例： ls -la &#x2F;home
+
+目录处理命令
+ls
+
+原意： list
+功能： 显示目录文件
+选项： -a： 显示所有文件(all)，-l： 显示详细信息(long)
+参数： 路径（非必填）
+语法： ls -la &#x2F;home
+
+
+cd
+
+原...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-03-23</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Linux/" title="Linux">Linux </a><i class="fa fa-tag"></i><a class="tag" href="/tags/操作系统/" title="操作系统">操作系统 </a><span>大约1817个字, 6分钟3秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2023/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%9F%A5%E8%AF%86%E6%9E%B6%E6%9E%84%E4%BD%93%E7%B3%BB/">软件测试知识架构体系</a></h3></div><div class="post-content"><p>一、测试基础了解测试的基础技能，掌握主流缺陷管理工具的使用，熟练测试环境的操作与运维
+
+
+
+
+测试基础
+
+
+
+测试计划&#x2F;测试用例
+黑盒用例设计等价类&#x2F;边界值&#x2F;场景分析&#x2F;判定表&#x2F;因果图分析&#x2F;错误推断
+
+
+缺陷
+缺陷生命周期&#x2F;缺陷分级&#x2F;缺...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-02-11</span><i class="fa fa-tag"></i><a class="tag" href="/tags/软件测试/" title="软件测试">软件测试 </a><span>大约3982个字, 13分钟16秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2023/02/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/Python%20%E7%B3%BB%E5%88%97/Python%20%E5%9F%BA%E7%A1%80/">python 基础</a></h3></div><div class="post-content"><p>Python 环境搭建
+下载安装
+
+123456$ 下载页面：https://www.python.org/downloads/windows/	2.7：https://www.python.org/downloads/release/python-2718/（选择：Windows x86-64 MSI inst...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-02-07</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Python-系列/" title="Python 系列">Python 系列 </a><span>大约6080个字, 20分钟16秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2023/02/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/Python%20%E7%B3%BB%E5%88%97/Python%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">python 面向对象</a></h3></div><div class="post-content"><p>类是面向对象编程的核心， 它扮演相关数据及逻辑的容器角色。它们提供了创建“真实”对象(也就是实例)的蓝图。
+1234567891011121314151617181920# 如何定义类# 使用 class 关键字定义类。 可以提供一个可选的父类或者说基类; 如果没有合适的基类，# 那就使用 object 作为基类...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-02-05</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Python-系列/" title="Python 系列">Python 系列 </a><span>大约2241个字, 7分钟28秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2023/01/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%B0%8F%E4%B8%93%E6%A0%8F/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%B5%B7%E6%AD%A5/">软件测试基础</a></h3></div><div class="post-content"><p>什么是软件测试在规定的条件下，对程序进行操作，从而发现错误，对软件质量进行评估的过程。
+软件测试的目的以最少的人力、物力、时间找到软件的缺陷，并修改从而规避商业风险。
+软件测试的定义使用人工和自动手段来运行和测试某个系统的过程，目的在于检验是否满足了需求。
+软件测试的原则
+所有的测试都应该追朔到用户需求
+尽早和不...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-01-05</span><i class="fa fa-tag"></i><a class="tag" href="/tags/软件测试/" title="软件测试">软件测试 </a><span>大约4189个字, 13分钟57秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2023/01/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/Shell%20%E7%BC%96%E7%A8%8B/Shell%20%E7%BC%96%E7%A8%8B/">Shell 编程学习笔记</a></h3></div><div class="post-content"><p>[ 特征 ]
+
+文件前添加#!/bin/bash 或 #!/bin/sh
+告诉系统其后路径所指定的程序即是解释此脚本文件的 Shell 程
+是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。
+
+
+
+
+shell 实例
+echo 用于向窗口输出文本
+
+123#!/bin/bashe...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-01-04</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Shell-编程/" title="Shell 编程">Shell 编程 </a><span>大约8923个字, 29分钟44秒读完</span></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/page/4/">上一页</a></li></ul></div></div></div></div></main-outlet><script>(async function(){ if (Anatolo.search == null) await Anatolo.getMsg("search-init"); Anatolo.search.config = {translation:{posts:"文章",pages:"页面",categories:"分类",tags:"标签",untitled:"(无标题)",} }; })()</script><div class="searchbox ins-search modal-cover"><div class="searchbox-container ins-search-container modal-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="Anatolo.search.closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div><button class="float-button hide" id="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" type="button" title="回到顶部"><i class="fa fa-angle-up"></i></button><div class="modal-cover" id="success-indicator"><div class="modal-container indicator"><i class="fa fa-check"></i></div></div></body></html>

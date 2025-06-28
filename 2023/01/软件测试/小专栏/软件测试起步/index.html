@@ -1,0 +1,449 @@
+<!DOCTYPE html><html lang="zh-CN" theme="light"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="张小剩"><title>软件测试基础 · 张小剩的博客</title><meta name="description" content="什么是软件测试在规定的条件下，对程序进行操作，从而发现错误，对软件质量进行评估的过程。
+软件测试的目的以最少的人力、物力、时间找到软件的缺陷，并修改从而规避商业风险。
+软件测试的定义使用人工和自动手段来运行和测试某个系统的过程，目的在于检验是否满足了需求。
+软件测试的原则
+所有的测试都应该追朔到用户"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta id="site_data_static" data-url="/"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/assets/icon/favicon_1.ico"><link rel="stylesheet" href="/js_complied/bundle.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"><script src="/js_complied/bundle.js"></script><script src="/js/baidu-tongji.js"></script><script>Anatolo.comment.setConfig({"valine":{"enable":false,"appid":null,"appkey":null,"notify":false,"verify":false,"avatar":"mm","placeholder":"hello, world"},"gitment":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"gitalk":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"duoshuo":null,"disqus":null,"gentie":null})</script><meta name="generator" content="Hexo 7.3.0"></head><body><main-outlet><div class="page-top animated"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="nav_right_btn"><li class="btn-toggle-more"><i class="fa fa-ellipsis"></i></li><li class="btn-go-back"><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li class="btn-search"><a class="fa fa-search" onclick="Anatolo.search.openWindow();"></a></li><li class="btn-toggle-theme"><a class="far fa-sun" onclick="Anatolo.toggleDarkLightTheme();"></a></li></div><div class="avatar"><img src="/assets/images/Avatar_20250419_300889.jpg"></div></div></div><div class="sidebar animated"><div class="sidebar-top"><div class="logo-title"><div class="title"><div class="logo" style="width:220px;height:220px;"><div class="polygon-box1"><div class="polygon-box2"><img class="polygon-img" src="/assets/images/Avatar_20250419_300889.jpg" alt="logo"></div></div></div><h3 title="" style="margin: 2rem"><a href="/">张小剩的博客</a></h3><div class="description"><p>折腾是一种乐趣，求知是一种追求！</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/alwaysyo"><i class="fab fa-github"></i></a></li><li><a href="mailto:zhxy_chn@126.com"><i class="fa fa-envelope"></i></a></li><li><a href><i class="fa fa-rss"></i></a></li></ul><div class="blog-time"><div id="clock-container"><canvas id="canvas-time" style="width: 80%; margin-top: 2em" width="700"></canvas></div><script type="text/javascript" charset="utf-8" src="/js/digit-time.js"></script><div class="footer-aside-box description" style="font-size: 12px; margin: 0.5em"><i class="fa fa-cog fa-spin"></i><span id="runtime"></span><script type="text/javascript" charset="utf-8" src="/js/run-time.js"></script></div></div></div></div><div class="footer"><div class="p"><span style="margin-right: 5px">全站 CC-BY-SA-3.0</span><i class="fa fa-star"></i><span style="margin-left: 5px">张小剩</span></div><div class="by_farbox"><span style="margin-right: 5px">Powered by</span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo</a><span style="margin-right: 5px; margin-left: 5px">& Theme modified from</span><a href="https://github.com/Lhcfl/hexo-theme-anatolo" target="_blank">Anatolo</a></div><div class="beian"></div></div></div><div class="main animated fadeInDown"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated"><div class="post-title"><h3><a>软件测试基础</a></h3></div><div class="post-content"><p><h2 id="什么是软件测试"><a href="#什么是软件测试" class="headerlink" title="什么是软件测试"></a>什么是软件测试</h2><p>在规定的条件下，对程序进行操作，从而发现错误，对软件质量进行评估的过程。</p>
+<h2 id="软件测试的目的"><a href="#软件测试的目的" class="headerlink" title="软件测试的目的"></a>软件测试的目的</h2><p>以最少的人力、物力、时间找到软件的缺陷，并修改从而规避商业风险。</p>
+<h2 id="软件测试的定义"><a href="#软件测试的定义" class="headerlink" title="软件测试的定义"></a>软件测试的定义</h2><p>使用人工和自动手段来运行和测试某个系统的过程，目的在于检验是否满足了需求。</p>
+<h2 id="软件测试的原则"><a href="#软件测试的原则" class="headerlink" title="软件测试的原则"></a>软件测试的原则</h2><ul>
+<li>所有的测试都应该追朔到用户需求</li>
+<li>尽早和不断的测试</li>
+<li>测试工作都应该由独立的专业的软件测试机构来完成</li>
+<li>pareto 原则，测试发现的错误中 80% 很可能起源于 20% 的模块中（20% 指的是应用中出现的新模块，开发人员第一次开发，故会出现较多错误）</li>
+<li>设计测试用例时，应该考虑各种情况<ul>
+<li>测试用例： 测什么？怎么测？</li>
+</ul>
+</li>
+<li><strong>对测试出的错误结果一定要有一个确认的过程（描述缺陷报告）</strong><ul>
+<li>书写错误文档</li>
+</ul>
+</li>
+<li>指定严格的测试计划</li>
+<li><strong>完全测试是不可能的，测试需要终止</strong></li>
+<li>注意回归测试的的关联性<ul>
+<li>回归测试：指开发人员修改了旧代码后，我们需要重新进行测试，以确认修改没有有引入新的错误，或导致其他代码产生错误。</li>
+</ul>
+</li>
+<li>妥善保存一切测试过程文档</li>
+</ul>
+<h2 id="软件产品质量模型（ISO-IEC-9126）"><a href="#软件产品质量模型（ISO-IEC-9126）" class="headerlink" title="软件产品质量模型（ISO &#x2F; IEC 9126）"></a>软件产品质量模型（ISO &#x2F; IEC 9126）</h2><ul>
+<li>功能性：提供满足明确和隐含要求的功能的能力</li>
+<li>可靠性：在特定条件下使用时，软件产品呢维持规定的性能级别能力<ul>
+<li>设备最好不要出故障</li>
+<li>社保出故障了，不要影响主要的功能和业务</li>
+<li>如果影响了主要功能和业务，系统可以尽快定位并恢复</li>
+</ul>
+</li>
+<li>易用性：易懂、易学、易用、漂亮好看（用户体验好）</li>
+<li>效率：软件产品可提供适当的性能的能力，也就是产品的性能（单选、多选、全选）</li>
+<li>可维持性：产品可以被修改的能力。可以增加功能，可以更新。</li>
+<li>可移植性：跨越不同系统平台</li>
+</ul>
+<h2 id="软件质量模型保证（SQA）"><a href="#软件质量模型保证（SQA）" class="headerlink" title="软件质量模型保证（SQA）"></a>软件质量模型保证（SQA）</h2><p>[ 目的 ]</p>
+<pre><code>使软件制作的过程对于领导层是可见的。
+</code></pre>
+<p>[ 目标 ]</p>
+<ul>
+<li>保证工作是有计划进行的</li>
+<li>客观的验证软件项目产品和工作是否遵循恰当的标准，步骤和需求。</li>
+<li>保证工作及结果及时通知给相关人员</li>
+<li>高管可以接触到项目内部</li>
+<li>软件质量需要测试工作来保证</li>
+</ul>
+<p>[ QC（检验产品的质量）]</p>
+<p>找出产品存在的问题，进行质量控制，向管理层反馈质量信息。</p>
+<p>[ QA（审计产品过程的质量）]</p>
+<p>来确认项目按照要求进行，审计的内容主要是过程； QA 则确保 QC 按照过程进行质量控制活动，按照过程将检查结果向管理层汇报。</p>
+<h2 id="软件测试的基本流程"><a href="#软件测试的基本流程" class="headerlink" title="软件测试的基本流程"></a>软件测试的基本流程</h2><ul>
+<li>需求分析</li>
+<li>编写测试用例（测什么？怎么测？）</li>
+<li>评审测试用例</li>
+<li>搭建测试环境</li>
+<li>等待开发提供测试包</li>
+<li>部署测试包</li>
+<li>冒烟测试（对软件主体的基本功能进行基本测试）</li>
+<li>执行测试用例</li>
+<li>BUG 跟踪处理（提交及回归 BUG）</li>
+<li>N 轮之后符合需求</li>
+<li>测试结束</li>
+</ul>
+<h2 id="测试用例编写"><a href="#测试用例编写" class="headerlink" title="测试用例编写"></a>测试用例编写</h2><h4 id="测试需求"><a href="#测试需求" class="headerlink" title="测试需求"></a>测试需求</h4><div align="center">
+
+<p><img src="https://ftp.bmp.ovh/imgs/2020/04/44d5789a21365530.png" alt="测试需求"></p>
+</div>
+
+<h4 id="测试要点和测试点"><a href="#测试要点和测试点" class="headerlink" title="测试要点和测试点"></a>测试要点和测试点</h4><div align="center">
+
+<p><img src="https://ftp.bmp.ovh/imgs/2020/04/4a83c3b61ceeafa8.png" alt="测试要点和测试点"></p>
+</div>
+
+<h2 id="开发模型"><a href="#开发模型" class="headerlink" title="开发模型"></a>开发模型</h2><h3 id="瀑布模型"><a href="#瀑布模型" class="headerlink" title="瀑布模型"></a>瀑布模型</h3><h3 id="快速原型模型"><a href="#快速原型模型" class="headerlink" title="快速原型模型"></a>快速原型模型</h3><h3 id="V-模型"><a href="#V-模型" class="headerlink" title="V 模型"></a>V 模型</h3><div align="center">
+
+<p><img src="https://ftp.bmp.ovh/imgs/2020/05/0d7cbc216f388880.png" alt="V模型"></p>
+</div>
+
+<p><strong>开发和测试阶段划分比较清晰</strong></p>
+<ul>
+<li>需求分析</li>
+<li>概要设计</li>
+<li>详细设计</li>
+<li>编码</li>
+<li>单元测试（独立的模块测试）</li>
+<li>集成测试（模块联调）</li>
+<li>系统测试（整体流程）</li>
+<li>验收测试（验证是否满足需求）</li>
+</ul>
+<p>[ 优点 ]</p>
+<ul>
+<li>包含底层测试（单元测试）和高层测试（系统测试）</li>
+<li>阶段划分清晰，方便工作的整体把控</li>
+</ul>
+<p>[ 缺点 ]</p>
+<ul>
+<li>测试阶段比较靠后，之前的问题已经产生，修改不方便</li>
+<li>V 模型就是瀑布模型的变种，如果需求发生变化必然返工</li>
+</ul>
+<h3 id="W-模型（双-V-模型）"><a href="#W-模型（双-V-模型）" class="headerlink" title="W 模型（双 V 模型）"></a>W 模型（双 V 模型）</h3><div align="center">
+
+<p><img src="https://ftp.bmp.ovh/imgs/2020/05/7d4ee17a2197ece6.png" alt="W 模型"></p>
+</div>
+
+<p><strong>开发一个 V, 测试一个 V，开发和测试并行</strong></p>
+<ul>
+<li>开发 V (需求分析、概要设计、详细设计、编码、集成、实施、交付)</li>
+<li>测试 V (系统测试设计、集成测试设计、单元测试设计、单元测试、集成测试、系统测试、验收测试)</li>
+</ul>
+<p>[ 优点 ]</p>
+<ul>
+<li>开发伴随着测试并行，需求和设计一样要进行测试</li>
+<li>尽早的介入测试，会更早的发现问题，降低修复成本</li>
+<li>阶段依然明显，方便整体流程把控</li>
+</ul>
+<p>[ 缺点 ]</p>
+<ul>
+<li>代码依然在测试之前，不方便代码的测试工作</li>
+<li>如果没有文档，根本无法进行 W 模型，对人员要求较高</li>
+</ul>
+<h2 id="软件测试分类"><a href="#软件测试分类" class="headerlink" title="软件测试分类"></a>软件测试分类</h2><div align="center">
+
+<p><img src="https://ftp.bmp.ovh/imgs/2020/05/c3f48210f76d2c81.png" alt="软件测试分类"></p>
+</div>
+
+<h2 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a>系统测试</h2><h3 id="什么是系统测试"><a href="#什么是系统测试" class="headerlink" title="什么是系统测试"></a>什么是系统测试</h3><p>  系统测试是一个全面的测试，包括单元、集成测试，</p>
+<h3 id="系统测试的方法是什么"><a href="#系统测试的方法是什么" class="headerlink" title="系统测试的方法是什么"></a>系统测试的方法是什么</h3><ul>
+<li>功能测试<ul>
+<li>概念：根据产品的需求说明书和测试需求列表，验证产品的功能实现是否符合产品的需求规格</li>
+<li>考察特性： 功能是否有遗漏，功能是否准确</li>
+<li>测试思路&#x2F;步骤：<ol>
+<li>确定功能需求列表</li>
+<li>分析功能测试得出测试子项</li>
+<li>根据测试子项分析</li>
+<li>采用测试用例方法设计用例</li>
+</ol>
+</li>
+<li>测试点： 根据产品的需求说明书和测试需求列表，验证产品的功能实现是否符合产品的需求规格，满足用户显性和隐形的需求</li>
+</ul>
+</li>
+<li>性能测试<ul>
+<li>概念：验证系统在不同的业务场景下的响应时间和资源利用率等性能指标是否符合预期的标准</li>
+<li>测试思路：<ol>
+<li>压力测试：调查系统在其资源超负荷的情况下的表现，尤其是这些对系统的处理时间有什么影响</li>
+<li>容量测试：面向与数据。使系统承受超额的数据容量来发现它是否可以处理数据容量</li>
+<li>负载测试：在一定负载的情况下系统的性能表现（不关注稳定性，也就是说不关注长时间运行，只是得到不同负载相关性能指标即可）</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>安全性测试:<ul>
+<li>概念：用来验证集成在系统内的保护机制是否能够在实际的情况中不受到非法的侵入</li>
+<li>测试点：<ol>
+<li>权限管理（注册登录才可以查看、注册信息符合要求、密码后台加密）</li>
+<li>信息保存（log、日志、cookie）</li>
+<li>数据库（默认的用户名和密码）</li>
+<li>协议(http协议)</li>
+</ol>
+</li>
+<li>安全性测试策略：层层剥离法</li>
+<li>工具：</li>
+<li>书籍：白帽子讲 web 安全</li>
+</ul>
+</li>
+<li>异常测试：<ul>
+<li>概念：又叫系统容错和可恢复性测试</li>
+<li>可靠性：指标</li>
+<li>可靠性设计方法：<ol>
+<li>避开错误（主动避开错误，针对可以预见的错误进行主动处理。试点：故意构测造无效数据、边界条件、压力测试）</li>
+<li>容错技术（主动断电强制进入新的设备、构造数据库瘫痪、构造数据死锁、构造数据的不完整事物、构造出错的时间点：断网、短信号）</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>GUI 测试内容<ul>
+<li>界面实现与界面设计的吻合情况</li>
+<li>确认界面处理的正确性</li>
+</ul>
+</li>
+<li>易用性测试</li>
+<li>安装测试</li>
+<li>配置测试</li>
+<li>兼容测试</li>
+</ul>
+<h2 id="测试用例设计方法"><a href="#测试用例设计方法" class="headerlink" title="测试用例设计方法"></a>测试用例设计方法</h2><h3 id="等价类划分法"><a href="#等价类划分法" class="headerlink" title="等价类划分法"></a>等价类划分法</h3><p><strong>把无法穷举的数据分类书写</strong></p>
+<ul>
+<li>按需求写出有效等价类</li>
+<li>按需求取反无效等价类</li>
+<li>找到特殊情况的无效等价类（中文、英文、空格、空、符号等）</li>
+</ul>
+<p>[ 细节 ]</p>
+<ul>
+<li>输入长度</li>
+<li>组成规则</li>
+<li>输入类型</li>
+<li>是否为空</li>
+<li>是否去除空格</li>
+<li>是否区分大小写</li>
+</ul>
+<h3 id="边界值测试"><a href="#边界值测试" class="headerlink" title="边界值测试"></a>边界值测试</h3><ul>
+<li>找到测试数据的边界点进行测试，也就是有效等价类和无效等价类的边界点</li>
+<li>一般情况下需要对边界值以及边界值两边的的值分别进行测试（如：0-100，需要测试 0， 100， -1，1，99，101）</li>
+</ul>
+<h3 id="因果图制作判定表"><a href="#因果图制作判定表" class="headerlink" title="因果图制作判定表"></a>因果图制作判定表</h3><ul>
+<li>找到所有的输入条件和预期结果，把所有的输入条件和输出条件填写进去</li>
+<li>得到初始表格，根据实际需求进行简化</li>
+</ul>
+<h3 id="场景法"><a href="#场景法" class="headerlink" title="场景法"></a>场景法</h3><ul>
+<li>基本流：正确的业务流程</li>
+<li>备选流：有问题的业务流程</li>
+</ul>
+<p>测试用例书写：需求文档的每一个需求</p>
+<h3 id="流程法"><a href="#流程法" class="headerlink" title="流程法"></a>流程法</h3><p>测试用例必须包含所有的分支条件，每一个分支条件就是一条测试用例。</p>
+<h3 id="错误推测法"><a href="#错误推测法" class="headerlink" title="错误推测法"></a>错误推测法</h3><ul>
+<li>时间急，任务紧，测试时间少，考虑使用错误推断法，根据测试人员以往的项目经验进行设计</li>
+<li>已经经过几轮测试后，可以使用错误推测法进行测试用例的补充</li>
+</ul>
+<h3 id="正交排列法"><a href="#正交排列法" class="headerlink" title="正交排列法"></a>正交排列法</h3><p>当要测试的内容，需要排列组合的情况非常多的时候，我们考虑使用科学的方法来减少测试用例的个数，即正交表。</p>
+<p><strong>特点：均匀分散，齐整可比，所有的情况都应该被均匀的测试过一次</strong></p>
+<ul>
+<li>因素：控件的个数</li>
+<li>水平：控件里面的可选项个数</li>
+</ul>
+<p>[ 步骤 ]</p>
+<ul>
+<li>先确定几因素，几水平</li>
+<li>在“常用正交表”中找到合适的表格</li>
+<li>复制找到的表格到自己的表格中</li>
+<li>写一个对照表（所有的控件和对应的选项列出来）</li>
+<li>把复制过来的表格和对照表实现映射关系</li>
+</ul>
+<p><strong>如果没有找到合适的正交表，选用多一些的正交表，把多余的内容删除</strong></p>
+<h3 id="混合正交表"><a href="#混合正交表" class="headerlink" title="混合正交表"></a>混合正交表</h3><p>步骤：</p>
+<ul>
+<li><p>制作取值表</p>
+</li>
+<li><p>复制取值表的数据，放到文本文档中保存</p>
+</li>
+<li><p>把文本文档放在 allpairs.文件夹中</p>
+</li>
+<li><p>WIN+R 键进入 cmd 控制台</p>
+</li>
+<li><p>进入 allpairs 文件夹</p>
+</li>
+<li><p>在制台中入 allpairs 的文件路径如 F:allpairs&#x2F;allpairs.exe test1.txt&gt;test2.txt(其中 test1 是你放进 allpairs 文件夹中的文件，test2 填你要生成的文件名)</p>
+</li>
+</ul>
+<p>[ 获取方式 ]</p>
+<ul>
+<li><p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1yQ7lrZSeR6lnvyYeXLzEdw?pwd=tap5">https://pan.baidu.com/s/1yQ7lrZSeR6lnvyYeXLzEdw?pwd=tap5</a></p>
+</li>
+<li><p>提取码: tap5</p>
+</li>
+</ul>
+<h2 id="测试用例的设计"><a href="#测试用例的设计" class="headerlink" title="测试用例的设计"></a>测试用例的设计</h2><h3 id="测试用例设计综合策略"><a href="#测试用例设计综合策略" class="headerlink" title="测试用例设计综合策略"></a>测试用例设计综合策略</h3><ol>
+<li><p>在任何情况下都必须使用边界值分析方法，经验表明用这种方法设计出测试用例发现程序错误的能力最强。</p>
+</li>
+<li><p>必要时用等价类划分方法补充一些测试用例。</p>
+</li>
+<li><p>用错误推测法再追加一些测试用例。</p>
+</li>
+<li><p>对照程序逻辑，检查已设计出的测试用例的逻辑覆盖程度，如果没有达到要求的覆盖标准，应当再补充足够的测试用例。</p>
+</li>
+<li><p>如果程序的功能说明中含有输入条件的组合情况，则一开始就可选用因果图法。</p>
+</li>
+</ol>
+<h3 id="测试用例的设计步骤"><a href="#测试用例的设计步骤" class="headerlink" title="测试用例的设计步骤"></a>测试用例的设计步骤</h3><ol>
+<li><p>构造根据设计规格得出的基本功能测试用例。</p>
+</li>
+<li><p>边界值测试用例</p>
+</li>
+<li><p>状态转换测试用例。</p>
+</li>
+<li><p>错误猜测测试用例。</p>
+</li>
+<li><p>异常测试用例。</p>
+</li>
+</ol>
+<h2 id="软件缺陷"><a href="#软件缺陷" class="headerlink" title="软件缺陷"></a>软件缺陷</h2><h3 id="缺陷状态"><a href="#缺陷状态" class="headerlink" title="缺陷状态"></a>缺陷状态</h3><table>
+<thead>
+<tr>
+<th>编号</th>
+<th>缺陷状态</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>提交</td>
+<td>已提交的缺陷</td>
+</tr>
+<tr>
+<td>2</td>
+<td>打开</td>
+<td>确认提交的缺陷，等待处理</td>
+</tr>
+<tr>
+<td>3</td>
+<td>拒绝</td>
+<td>拒绝提交的缺陷，不需要修复或不是缺陷、重复缺陷、无法重现</td>
+</tr>
+<tr>
+<td>4</td>
+<td>修复</td>
+<td>缺陷被修复（开发人员自认为修改对了）</td>
+</tr>
+<tr>
+<td>5</td>
+<td>关闭</td>
+<td>确认修复的缺陷，将其关闭（测试人员进行回归复测，确认已经没问题）</td>
+</tr>
+<tr>
+<td>6</td>
+<td>推迟</td>
+<td>可在以后解决，但要确定修复日期和版本</td>
+</tr>
+</tbody></table>
+<p>[ 禅道 ]</p>
+<ul>
+<li>激活</li>
+<li>已解决</li>
+<li>已关闭</li>
+</ul>
+<h3 id="缺陷程度划分"><a href="#缺陷程度划分" class="headerlink" title="缺陷程度划分"></a>缺陷程度划分</h3><ol>
+<li>表面错误</li>
+<li>影响独立模块、断断续续的问题、特定条件下发生、与产品要求不一致。</li>
+<li>功能点没有实现、数据丢失</li>
+<li>影响了系统或者出现了严重的计算错误</li>
+</ol>
+<h3 id="缺陷的优先级"><a href="#缺陷的优先级" class="headerlink" title="缺陷的优先级"></a>缺陷的优先级</h3><table>
+<thead>
+<tr>
+<th>优先级别</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5-urgent</td>
+<td>最高优先级 在这个错误影响下，系统几乎不可用</td>
+</tr>
+<tr>
+<td>4-veryHigh</td>
+<td>高优先级 错误对系统的功能产生严重的影响</td>
+</tr>
+<tr>
+<td>3-high</td>
+<td>中优先级 错误会制约开发和测试的活动进行，如果先前没有修复他，那么需要在发布前修复他</td>
+</tr>
+<tr>
+<td>2-medium</td>
+<td>低优先级 不会延迟发布，但是会在以后修正这个错误</td>
+</tr>
+<tr>
+<td>1-low</td>
+<td>最低优先级 时间和资源允许时修正</td>
+</tr>
+</tbody></table>
+<p><strong>优先级和严重程度不是绝对的正比关系</strong></p>
+<h3 id="缺陷类型"><a href="#缺陷类型" class="headerlink" title="缺陷类型"></a>缺陷类型</h3><ul>
+<li>系统缺陷</li>
+<li>数据缺陷</li>
+<li>数据库缺陷</li>
+<li>接口缺陷</li>
+<li>功能缺陷</li>
+<li>安全性缺陷</li>
+<li>兼容性缺陷</li>
+<li>性能缺陷</li>
+<li>界面缺陷（删除操作未给出提示）</li>
+<li>建议（功能建议、操作建议）</li>
+</ul>
+<h3 id="缺陷报告注意事项"><a href="#缺陷报告注意事项" class="headerlink" title="缺陷报告注意事项"></a>缺陷报告注意事项</h3><ul>
+<li>尽量确保缺陷可以重现</li>
+<li>简洁、准确、完整</li>
+<li>一个缺陷一个报告</li>
+<li>复现缺陷的步骤清晰（一个编号一个步骤）</li>
+<li>描述结果和期望结果（结果就是 BUG 出现结果）</li>
+<li>使用术语描述问题</li>
+</ul>
+<h3 id="缺陷统计"><a href="#缺陷统计" class="headerlink" title="缺陷统计"></a>缺陷统计</h3><ul>
+<li>对软件问题的功能域分布进行分析，找出系统的薄弱环节<ul>
+<li>要详细采集每个功能模块或系统构件的缺陷数据，并按功能、错误类型、严重程度等分类</li>
+<li>二八定理：80% 的软件问题总发生在大约 20% 的功能模块中</li>
+</ul>
+</li>
+<li>对缺陷的注入阶段进行分析，并于历史数据相比较</li>
+<li>应对软件缺陷类型进行分析，以便针对各自特点，先修复严重缺陷</li>
+<li>动态采集每个测试周期中发现的缺陷数，并有效的控制缺陷的修复率</li>
+<li>密切观察缺陷的状态，并及时跟踪其状态的变化，以检查测试和开发人员的工作情况</li>
+</ul>
+<h2 id="SVN-使用"><a href="#SVN-使用" class="headerlink" title="SVN 使用"></a>SVN 使用</h2><ul>
+<li>创建版本库</li>
+<li>检出 （获取版本库最新版本，只有检出操作后才能提交更新操作）</li>
+<li>提交（把此文件夹中的内容提交到版本库）</li>
+<li>更新（把最新的版本库中的内容，更新到此文件夹中）</li>
+</ul>
+<h2 id="接口测试"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试</h2><h3 id="接口优点"><a href="#接口优点" class="headerlink" title="接口优点"></a>接口优点</h3><ul>
+<li>责任划分清晰</li>
+<li>缩短研发周期</li>
+<li>可扩展性强</li>
+</ul>
+<h3 id="接口测试流程"><a href="#接口测试流程" class="headerlink" title="接口测试流程"></a>接口测试流程</h3><ul>
+<li>接口的功能测试（先保证接口是正确的）</li>
+<li>测试接口的数据（传递一些特殊的数据，保证接口没有问题）</li>
+<li>自动化测试脚本的编辑</li>
+<li>接口的性能、压力测试</li>
+</ul>
+<blockquote>
+<ul>
+<li>HTTP: 超文本传输协议，浏览器和服务器之间通信的规则</li>
+<li>URL: 统一资源定位符，协议:&#x2F;&#x2F;主机地址&#x2F;路径</li>
+<li>GET: 提交的数据显示在地址栏，不安全，提交的数据量有限制，不重要的数据使用 GET</li>
+<li>POST: 隐式提交数据，更安全，没有数据量大小的限制，重要数据使用 POST</li>
+</ul>
+</blockquote>
+<h3 id="restful-风格（API-文档规则，非强制要求，软要求）"><a href="#restful-风格（API-文档规则，非强制要求，软要求）" class="headerlink" title="restful 风格（API 文档规则，非强制要求，软要求）"></a>restful 风格（API 文档规则，非强制要求，软要求）</h3><ul>
+<li>查<ul>
+<li>方法: GET</li>
+<li>响应码: 200 + 查询数据</li>
+</ul>
+</li>
+<li>增<ul>
+<li>方法: POST</li>
+<li>响应码: 201 + 新增的数据</li>
+</ul>
+</li>
+<li>改<ul>
+<li>方法: PUT</li>
+<li>响应码: 200&#x2F;201 + 修改后的数据</li>
+</ul>
+</li>
+<li>删<ul>
+<li>方法: DELETE</li>
+<li>响应码: 204 + 无</li>
+</ul>
+</li>
+</ul>
+<h3 id="接口请求的四大要素"><a href="#接口请求的四大要素" class="headerlink" title="接口请求的四大要素"></a>接口请求的四大要素</h3><ul>
+<li>接口 URL 地址</li>
+<li>请求方法</li>
+<li>请求头</li>
+<li>请求参数</li>
+</ul>
+</p></div><div class="post-footer"><div class="tip">本文采用 CC-BY-SA-3.0 协议，转载请注明出处<br>作者: 张小剩</div><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-01-05</span><i class="fa fa-tag"></i><a class="tag" href="/tags/软件测试/" title="软件测试">软件测试 </a><span>大约4189个字, 13分钟57秒读完</span></div></div></div></div><div class="share"><div class="share-btn linkonly"><a class="fa fa-link" onclick="Utils.copyToClipboard(window.location.href)" ref="sidebar"></a></div><div class="share-btn evernote"><a class="fa fa-share" onclick="Anatolo.share.native()" ref="sidebar"></a></div><div class="share-btn weibo"><a class="fab fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="share-btn twitter"><a class="fab fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/intent/tweet?text=%E5%88%86%E4%BA%AB%E6%96%87%E7%AB%A0%EF%BC%9A%0A%0A%E5%BC%A0%E5%B0%8F%E5%89%A9%E7%9A%84%E5%8D%9A%E5%AE%A2%20%C2%B7%20%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%0Ahttp://example.com/2023/01/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%B0%8F%E4%B8%93%E6%A0%8F/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%B5%B7%E6%AD%A5/%0A"></a></div><div class="share-btn mastodon"><a class="fab fa-mastodon" target="_blank" rel="noopener" href="https://mastodonshare.com/?text=%E5%88%86%E4%BA%AB%E6%96%87%E7%AB%A0%EF%BC%9A%0A%0A%E5%BC%A0%E5%B0%8F%E5%89%A9%E7%9A%84%E5%8D%9A%E5%AE%A2%20%C2%B7%20%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%0Ahttp://example.com/2023/01/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%B0%8F%E4%B8%93%E6%A0%8F/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%B5%B7%E6%AD%A5/%0A"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/02/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/Python%20%E7%B3%BB%E5%88%97/Python%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="python 面向对象">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/01/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/Shell%20%E7%BC%96%E7%A8%8B/Shell%20%E7%BC%96%E7%A8%8B/" title="Shell 编程学习笔记">下一篇</a></li></ul></div><script>Anatolo.comment.setConfig({"valine":{"enable":false,"appid":null,"appkey":null,"notify":false,"verify":false,"avatar":"mm","placeholder":"hello, world"},"gitment":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"gitalk":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"duoshuo":null,"disqus":null,"gentie":null})</script></div></div></div></div></main-outlet><script>(async function(){ if (Anatolo.search == null) await Anatolo.getMsg("search-init"); Anatolo.search.config = {translation:{posts:"文章",pages:"页面",categories:"分类",tags:"标签",untitled:"(无标题)",} }; })()</script><div class="searchbox ins-search modal-cover"><div class="searchbox-container ins-search-container modal-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="Anatolo.search.closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div><button class="float-button hide" id="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" type="button" title="回到顶部"><i class="fa fa-angle-up"></i></button><div class="modal-cover" id="success-indicator"><div class="modal-container indicator"><i class="fa fa-check"></i></div></div></body></html>

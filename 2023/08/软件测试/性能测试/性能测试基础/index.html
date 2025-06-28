@@ -1,0 +1,487 @@
+<!DOCTYPE html><html lang="zh-CN" theme="light"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="张小剩"><title>性能测试基础 · 张小剩的博客</title><meta name="description" content="性能测试理论知识性能测试的目的：发现性能的瓶颈
+负载测试12通过逐步加压的方法，达到既定的性能阀值的目标。	阀值的设定应是小于等于某个值,如 CPU 的使用率小于等于 80%
+
+
+压力测试1通过逐步加压的方法，使系统的某些资源达到饱和，甚至失效的状态（也就是说什么条件下可以把系统压崩溃）
+
+
+并发测"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta id="site_data_static" data-url="/"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/assets/icon/favicon_1.ico"><link rel="stylesheet" href="/js_complied/bundle.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"><script src="/js_complied/bundle.js"></script><script src="/js/baidu-tongji.js"></script><script>Anatolo.comment.setConfig({"valine":{"enable":false,"appid":null,"appkey":null,"notify":false,"verify":false,"avatar":"mm","placeholder":"hello, world"},"gitment":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"gitalk":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"duoshuo":null,"disqus":null,"gentie":null})</script><meta name="generator" content="Hexo 7.3.0"></head><body><main-outlet><div class="page-top animated"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="nav_right_btn"><li class="btn-toggle-more"><i class="fa fa-ellipsis"></i></li><li class="btn-go-back"><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li class="btn-search"><a class="fa fa-search" onclick="Anatolo.search.openWindow();"></a></li><li class="btn-toggle-theme"><a class="far fa-sun" onclick="Anatolo.toggleDarkLightTheme();"></a></li></div><div class="avatar"><img src="/assets/images/Avatar_20250419_300889.jpg"></div></div></div><div class="sidebar animated"><div class="sidebar-top"><div class="logo-title"><div class="title"><div class="logo" style="width:220px;height:220px;"><div class="polygon-box1"><div class="polygon-box2"><img class="polygon-img" src="/assets/images/Avatar_20250419_300889.jpg" alt="logo"></div></div></div><h3 title="" style="margin: 2rem"><a href="/">张小剩的博客</a></h3><div class="description"><p>折腾是一种乐趣，求知是一种追求！</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/alwaysyo"><i class="fab fa-github"></i></a></li><li><a href="mailto:zhxy_chn@126.com"><i class="fa fa-envelope"></i></a></li><li><a href><i class="fa fa-rss"></i></a></li></ul><div class="blog-time"><div id="clock-container"><canvas id="canvas-time" style="width: 80%; margin-top: 2em" width="700"></canvas></div><script type="text/javascript" charset="utf-8" src="/js/digit-time.js"></script><div class="footer-aside-box description" style="font-size: 12px; margin: 0.5em"><i class="fa fa-cog fa-spin"></i><span id="runtime"></span><script type="text/javascript" charset="utf-8" src="/js/run-time.js"></script></div></div></div></div><div class="footer"><div class="p"><span style="margin-right: 5px">全站 CC-BY-SA-3.0</span><i class="fa fa-star"></i><span style="margin-left: 5px">张小剩</span></div><div class="by_farbox"><span style="margin-right: 5px">Powered by</span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo</a><span style="margin-right: 5px; margin-left: 5px">& Theme modified from</span><a href="https://github.com/Lhcfl/hexo-theme-anatolo" target="_blank">Anatolo</a></div><div class="beian"></div></div></div><div class="main animated fadeInDown"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated"><div class="post-title"><h3><a>性能测试基础</a></h3></div><div class="post-content"><p><h2 id="性能测试理论知识"><a href="#性能测试理论知识" class="headerlink" title="性能测试理论知识"></a>性能测试理论知识</h2><p><strong>性能测试的目的：发现性能的瓶颈</strong></p>
+<h3 id="负载测试"><a href="#负载测试" class="headerlink" title="负载测试"></a>负载测试</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">通过逐步加压的方法，达到既定的性能阀值的目标。</span><br><span class="line">	阀值的设定应是小于等于某个值,如 CPU 的使用率小于等于 80%</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过逐步加压的方法，使系统的某些资源达到饱和，甚至失效的状态（也就是说什么条件下可以把系统压崩溃）</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="并发测试"><a href="#并发测试" class="headerlink" title="并发测试"></a>并发测试</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">同一时间内，多个虚拟用户同时访问同一模块、同一功能。通常的测试方法是设置集合点。</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="容量测试"><a href="#容量测试" class="headerlink" title="容量测试"></a>容量测试</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">通常是指数据库层面的，目标是获取数据库最佳容量的能力，又称为容量预估。</span><br><span class="line">	测试方法：在一定的并发用户，不同的基础数据量下，观察数据库的处理能力，即获取数据库的各项性能指标</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="可靠性测试（稳定性测试-疲劳测试）"><a href="#可靠性测试（稳定性测试-疲劳测试）" class="headerlink" title="可靠性测试（稳定性测试 &#x2F; 疲劳测试）"></a>可靠性测试（稳定性测试 &#x2F; 疲劳测试）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">系统在高压的情况下，长时间的运行系统是否稳定。</span><br><span class="line">	如 CPU 使用率在 80% 以上，7 * 24 小时运行，系统是否稳定</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="异常测试（失败测试）"><a href="#异常测试（失败测试）" class="headerlink" title="异常测试（失败测试）"></a>异常测试（失败测试）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">指系统架构方面的测试，如：在负载均衡架构中，要测试宕机（死机）、节点挂掉等情况下系统的反应。</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="性能测试指标定义"><a href="#性能测试指标定义" class="headerlink" title="性能测试指标定义"></a>性能测试指标定义</h3><ul>
+<li>事务</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">从客户端发起的一个或多个请求(这些请求组成一个完整的操作)，到客户端接收到从服务器返回的响应。</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>TPS (Transactions Per Second)</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">每秒钟系统可以处理的事务数</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>QPS：(Query per second )</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一台查询服务器每秒处理的请求次数</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>请求响应时间</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">从客户端发起的一个请求开始，到客户端接收到从服务器返回的响应。整个过程所耗费的时间</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>事务响应时间</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事务可能有一个或多个请求组成，事务的响应时间主要针对于用户的角度而言，如转账。</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>并发定义</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">没有严格意义上的并发，并发总有先后，无论是差距 1 毫秒或者是 1 微秒，总有一个时间差。所以并发讲的是一个时间范围内，比如 1S 内。</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>并发用户数</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">同一单位时间内，对系统发起请求的用户数量</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>吞吐量</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一次性能测试过程中，网络上传输的数据量的总和</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>吞吐率</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">单位时间内网络上传输的数据量</span><br><span class="line">吞吐率 = 吞吐量 / 吞吐时间</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>点击率</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">每秒钟用户向服务器提交的请求数。Web 应用程序特有的指标，</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>资源使用率</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对不同的系统资源的使用情况，如： CPU、内存、 IO</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="性能测试的监控指标"><a href="#性能测试的监控指标" class="headerlink" title="性能测试的监控指标"></a>性能测试的监控指标</h3><ul>
+<li>响应时间</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">反映完成某笔业务（事务）所需要的时间。</span><br><span class="line">在性能测试中通过事务函数来完成对响应时间的统计，事务是指做某件事的操作，</span><br><span class="line">事务函数会记录开始做这件事情和该事情完成之间的时间差（事务响应时间 Transaction Response Time）</span><br><span class="line"></span><br><span class="line">    其他：</span><br><span class="line">    1. 响应时间的2、5、8原则</span><br><span class="line">    2. 80/20原则（又称帕累托效应，比如，某些系统一天中80%的访问量集中在20%的时间内）</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>吞吐量</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">反映单位时间内能够处理的事务数。</span><br><span class="line">在测试工具中，吞吐量也被称为TPS，单位时间内完成的事务数。</span><br><span class="line">TPS = 事务数 / 时间</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>服务器资源占用</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">服务器资源占用反映在负载下系统的资源利用率。资源的占用率越低，说明系统越优秀，资源是指系统运行的一切软硬件平台。</span><br><span class="line">在性能测试中，我们需要监控系统在负载下的硬件或者软件上的各种资源的使用情况，</span><br><span class="line">如：CPU的占用率、内存使用率、IO等（数据库中的查询Cache命中率）。</span><br><span class="line">对于终端用户来讲，其最关心的指标是响应时间。用户并不关心多少人使用，以及资源是否足够，所以性能测试必须保证在任意情况下终端用户使用的操作响应时间不大于5秒。</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="性能测试的原理"><a href="#性能测试的原理" class="headerlink" title="性能测试的原理"></a>性能测试的原理</h3><ul>
+<li>用户行为模拟</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">低成本且具有可行性，模拟大量用户操作的一种技术，凭借此项技术将被测系统在测试阶段运行起来，以检测系统工作是否正常。</span><br><span class="line">	1. 通过参数化，实现不同用户使用不同数据 </span><br><span class="line">    1. 通过集合点模拟多用户并发操作</span><br><span class="line">    2. 通过关联实现用户请求间的依赖关系</span><br><span class="line">    3. 通过思考时间代替请求间的延时时间</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>性能指标监控</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">通过模拟用户行为，在系统运行中需要监控各项性能指标，并分析指标正确性</span><br><span class="line">    1. 请求响应时间（通过事务实现 ）</span><br><span class="line">    2. 服务器处理能力监控（通过事务计算吞吐量）</span><br><span class="line">    3. 服务器资源利用率监控（计数器接口）</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>性能调优</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过指标的监控发现系统存在的性能缺陷，利用分析工具定位并修正性能问题。</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="性能测试的工作流程"><a href="#性能测试的工作流程" class="headerlink" title="性能测试的工作流程"></a>性能测试的工作流程</h2><p><img src="https://cdn.jsdelivr.net/gh/AlwaysYo/TyporaPics/Assets/20250524232343321.png"></p>
+<h3 id="性能测试的需求分析"><a href="#性能测试的需求分析" class="headerlink" title="性能测试的需求分析"></a>性能测试的需求分析</h3><ul>
+<li>目的: 明确测试目标和测试场景</li>
+<li>新系统<ul>
+<li>同行业比较</li>
+<li>业务预期</li>
+</ul>
+</li>
+<li>老系统<ul>
+<li>对比以往用户的使用行为以及用户量</li>
+</ul>
+</li>
+<li>性能需求的的提取</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 典型重要业务场景</span><br><span class="line">2. 高频使用场景</span><br><span class="line">3. 存在大量并发业务场景</span><br><span class="line">4. 容易出错的场景</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="系统应用分层架构"><a href="#系统应用分层架构" class="headerlink" title="系统应用分层架构"></a>系统应用分层架构</h3><p><img src="https://cdn.jsdelivr.net/gh/AlwaysYo/TyporaPics/Assets/20250524232355447.png"></p>
+<h2 id="JMeter-性能测试"><a href="#JMeter-性能测试" class="headerlink" title="JMeter 性能测试"></a>JMeter 性能测试</h2><h3 id="JMeter-实现逻辑分支控制"><a href="#JMeter-实现逻辑分支控制" class="headerlink" title="JMeter 实现逻辑分支控制"></a>JMeter 实现逻辑分支控制</h3><ul>
+<li>逻辑控制器<ul>
+<li>用来控制测试脚本的逻辑判断，即控制脚本的运行(以下为常用控制器)</li>
+<li>如果（if）控制器</li>
+<li>include Controller</li>
+<li>Runtime Controller</li>
+<li>Switch Controller</li>
+<li>While Controller</li>
+</ul>
+</li>
+</ul>
+<h3 id="JMeter-实现配置管理"><a href="#JMeter-实现配置管理" class="headerlink" title="JMeter 实现配置管理"></a>JMeter 实现配置管理</h3><ul>
+<li>配置元件</li>
+</ul>
+<h3 id="JMeter-函数助手"><a href="#JMeter-函数助手" class="headerlink" title="JMeter 函数助手"></a>JMeter 函数助手</h3><ul>
+<li>_CSVRead: 用于对脚本进行参数话，当脚本中不同变量需要不同参数值时</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">_CSVRead 函数参数说明：</span><br><span class="line"></span><br><span class="line">CSV file to get values from | *alias ==&gt; 指$&#123;__CSVRead(,)&#125;中（）内的第一个参数，调用文件logins.txt的路径</span><br><span class="line">Column number of CSV file | next | *alias ==&gt; 指$&#123;__CSVRead(,)&#125;中（）内的第二个参数，调用文件logins.txt中第几列的参数，注意第一列为0，第二列为1，依此类推。。。</span><br><span class="line"></span><br><span class="line">生成的函数字符串： $&#123;__CSVRead(C:\Users\234652\Desktop\JMeter\log\01.txt,5)&#125;</span><br><span class="line">[ 使用方法 ]： 配合 配置元件用户定义的变量使用</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>_Random： 生成随机数</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">_Random 函数参数说明：</span><br><span class="line"></span><br><span class="line">    The minimum value allowed for a range of values ==&gt; 一个范围内允许的最小的值   1</span><br><span class="line">    The maximum value allowed for a range of values ==&gt; 一个范围内允许的最大的值   100</span><br><span class="line">    Name of variable in which to store the result (optional) ==&gt; 为生成随机数添加变量名称   id(可任意)</span><br><span class="line"></span><br><span class="line">	生成的函数字符串：$&#123;__Random(2,100,)&#125;  ==&gt; id = 55(随机数)</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>_Log：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">log 函数参数说明：</span><br><span class="line"></span><br><span class="line">    String to be logged (and returned) ==&gt; 日志输出的内容，可以引用变量名称</span><br><span class="line">    Log level (default INFO) or OUT or ERR ==&gt; 定义日志输出的级别，INFO、OUT、warn</span><br><span class="line">    Throwable text (optional) ==&gt; 抛出的异常信息</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>_Split： 字符串分割函数</li>
+</ul>
+<h3 id="聚合报告"><a href="#聚合报告" class="headerlink" title="聚合报告"></a>聚合报告</h3><ul>
+<li>Label：每个 JMeter 的 element（例如 HTTP Request）都有一个 Name 属性，这里显示的就是 Name 属性的值</li>
+<li>#Samples：请求数——表示这次测试中一共发出了多少个请求，如果模拟10个用户，每个用户迭代10次，那么这里显示100</li>
+<li>Average：平均响应时间——默认情况下是单个 Request 的平均响应时间，当使用了 Transaction Controller 时，以 Transaction 为单位显示平均响应时间</li>
+<li>Median：中位数，也就是 50％ 用户的响应时间</li>
+<li>90% Line：90％ 用户的响应时间</li>
+<li>Min：最小响应时间</li>
+<li>Max：最大响应时间</li>
+<li>Error%：错误率 —— 错误请求数 &#x2F; 请求总数</li>
+<li>Throughput：吞吐量——默认情况下表示每秒完成的请求数（Request per Second），当使用了 Transaction Controller 时，也可以表示类似 LoadRunner 的 Transaction per Second 数</li>
+<li>KB&#x2F;Sec：每秒从服务器端接收到的数据量，相当于 LoadRunner 中的 Throughput &#x2F; Sec</li>
+</ul>
+<p><strong>重点关注的数据：</strong></p>
+<ul>
+<li>Samples： 请求数</li>
+<li>Average： 平均响应时间</li>
+<li>Min： 最小响应时间</li>
+<li>Max： 最大响应时间</li>
+<li>Error%： 错误率</li>
+<li>Throughput： 吞吐量</li>
+</ul>
+<h3 id="JMeter-扩展组件开发"><a href="#JMeter-扩展组件开发" class="headerlink" title="JMeter 扩展组件开发"></a>JMeter 扩展组件开发</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Git 地址：</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Linux-服务器监控性能测试"><a href="#Linux-服务器监控性能测试" class="headerlink" title="Linux 服务器监控性能测试"></a>Linux 服务器监控性能测试</h2><h3 id="测试范围及性能指标"><a href="#测试范围及性能指标" class="headerlink" title="测试范围及性能指标"></a>测试范围及性能指标</h3><p><strong>—— CPU 内存 磁盘 网络 版本</strong></p>
+<h3 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h3><ul>
+<li>进程： 具有一定独立功能的程序关于某个数据集合上的一次运行活动，是系统进行资源分配和调度的一个独立单位。（进程是可以独立运行的）</li>
+<li>线程： 是进程的一个实体，是 CPU 调度和分派的基本单位他是比进程更小的能够独立运行的基本单位，线程自己基本上不拥有系统资源，只拥有一点在运行中必不可少的资源。一个线程可以创建和撤销另一个线程</li>
+</ul>
+<h4 id="进程与线程的区别"><a href="#进程与线程的区别" class="headerlink" title="进程与线程的区别"></a>进程与线程的区别</h4><ol>
+<li>一个线程只属于一个进程，一个进程中可以拥有多个线程，线程之间可以互相操作。</li>
+<li>线程是进程工作的最小单位，</li>
+<li>一个进程会分配一个地址空间，进程与进程之间不共享地址空间。即不共享内存。</li>
+<li>同一个进程下的不同的多个线程，共享父进程的地址空间。</li>
+<li>线程在执行过程中，需要协作同步，不同进程的线程之间要利用消息通信的办法实现同步。</li>
+<li>线程作为调度和分派的基本单位，进程作为拥有资源的基本单位</li>
+</ol>
+<h4 id="进程的优缺点"><a href="#进程的优缺点" class="headerlink" title="进程的优缺点"></a>进程的优缺点</h4><p>[ 优点 ]</p>
+<ul>
+<li>每个进程互相独立，不影响主程序的稳定性，子进程崩溃不影响其他进程</li>
+<li>通过添加 CPU 可以扩充性能</li>
+<li>可以尽量减少线程加锁和解锁的影响，极大地提高了性能</li>
+</ul>
+<p>[ 缺点 ]</p>
+<ul>
+<li>逻辑控制复杂，需要和主程序交互</li>
+<li>多进程调度开销大</li>
+</ul>
+<h4 id="线程的优缺点"><a href="#线程的优缺点" class="headerlink" title="线程的优缺点"></a>线程的优缺点</h4><p>[ 优点 ]</p>
+<ul>
+<li>程序的逻辑和控制方式简单</li>
+<li>所有线程可以共享内存和变量等</li>
+<li>线程方式消耗的总资源比进程方式少</li>
+</ul>
+<p>[ 缺点 ]</p>
+<ul>
+<li>线程与主程序共用地址空间，最大内存地址受限</li>
+<li>线程之间的同步和加锁不易控制（同步锁）</li>
+<li>一个线程的崩溃可能影响整个程序的稳定性</li>
+</ul>
+<h3 id="Linux-服务器监控命令"><a href="#Linux-服务器监控命令" class="headerlink" title="Linux 服务器监控命令"></a>Linux 服务器监控命令</h3><h4 id="实时监控命令"><a href="#实时监控命令" class="headerlink" title="实时监控命令"></a>实时监控命令</h4><ul>
+<li>top (实时监控-综合)<ul>
+<li>作用： 实时监控系统的运行状态，并且可以按照 CPU 及内存进行排序</li>
+<li>top -h：帮助</li>
+<li>top -p: 监控指定进程，当监控多个进程是，进程 ID 以逗号分隔。语法：top -p PID</li>
+</ul>
+</li>
+<li>top 任务区命令(top 进入任务区)<ul>
+<li>M：按内存使用率排序</li>
+<li>P: 按 CPU 使用率排序</li>
+<li>z: 彩色 &#x2F; 黑白显示</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">load average 说明：</span><br><span class="line"></span><br><span class="line">    1. top 中的 load average 表示系统运行队列的平均利用率，也可以认为是可运行进程的平均数</span><br><span class="line">    2. 三个值分别表示： 1 分钟、5 分钟、15 分钟的平均负载值</span><br><span class="line">    3. 在单核 CPU 中 load average 的值为 1 时，表示满负荷状态。</span><br><span class="line">    4. 同理，在多核 CPU 中满负载 load average 的值为 1 * CPU 核数。</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>vmstat（实时监控 - 综合）<ul>
+<li>功能：可以监控操作系统的进程状态、内存、虚拟内存、磁盘 IO、CPU 的信息</li>
+<li>选项：vmstat -S 使用指定单位显示，（k, K, m, M 分别代表 1000, 1024, 1000000, 1048576 字节，默认单位 K 1024）</li>
+<li>语法：vmstat 2 5 （2 表示时间间隔； 5 表示 显示次数）</li>
+</ul>
+</li>
+<li>free (实时监控-内存)<ul>
+<li>功能：监控系统内存的使用状态</li>
+<li>语法：free -h</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">free - h 显示字段说明：</span><br><span class="line"></span><br><span class="line">    1. total： 总物理内存的大小</span><br><span class="line">    2. Used： 已经使用多大</span><br><span class="line">    3. Free: 可用多少</span><br><span class="line">    4. shared: 多个进程共享的内存总额</span><br><span class="line">    5. buffers/cached: 磁盘缓存的大小</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>mpstat（实时监控 - CPU）<ul>
+<li>功能：可以查看多核心 CPU 中每个计算核心的统计数据</li>
+<li>参数：无参数时，显示系统启动以后所有信息的平均值，有 interval 时，第一行的信息自系统启动以来的平均信息，从第二行开始，输出为前一个 interval 时间段的平均信息</li>
+<li>语法：mpstat [-P | ALL] [interval | count]</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mpstat 语法使用说明</span><br><span class="line"></span><br><span class="line">    1. -P: 表示监控那个 CPU ;在 [0, CPU 个数减一] 中取值</span><br><span class="line">    使用方法：mpstat -P 0（实时监控第一个 CPU）; mpstat -P 2(实时监控第三个 CPU);</span><br><span class="line">    2. interval 相邻两次采样的间隔事件; count 采样的次数，count 只能和 delay 一起使用</span><br><span class="line">    使用方法：mpstat 2 5 （2 表示时间间隔； 5 表示 显示次数）</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>netstat (实时监控 - 网络) （netstat -ntlp 查看端口有没有被监听）<ul>
+<li>netstat -n 拒绝显示别名，能显示数字的全部显示数字</li>
+<li>netstat -l 仅列出有在 Listen（监听）的服务状态</li>
+<li>netstat -p 显示建立相关链接的程序名</li>
+<li>netstat -t 显示 TCP 相关选项</li>
+<li>netstat -u 仅显示 UDP 相关选项</li>
+<li>netstat -i 显示自动匹配接口的信息 &#x3D;&#x3D;&gt; 查看网络传输的大小以及有没有发生错误</li>
+<li>netstat -c 每隔一个固定时间，执行该 netstat 命令</li>
+</ul>
+</li>
+<li>iostat (实时监控 - 磁盘)<ul>
+<li>作用： 显示磁盘读写操作的统计信息，同时给出 CPU 的使用情况</li>
+<li>iostat -x [设备名称] 1 2 输出指定要统计的磁盘设备名称，默认为所有磁盘设备（1，表示间隔时间，2 表示执行次数）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@dahuatech ~]# iostat -x</span><br><span class="line">    Linux 2.6.32-573.el6.x86_64 (dahuatech)         07/28/2020      _x86_64_        (8 CPU)</span><br><span class="line"></span><br><span class="line">    avg-cpu:  %user   %nice %system %iowait  %steal   %idle</span><br><span class="line">    15.64    0.15   14.30    0.48    0.00   69.43</span><br><span class="line"></span><br><span class="line">    Device:         rrqm/s   wrqm/s     r/s     w/s   rsec/s   wsec/s avgrq-sz avgqu-sz   await  svctm  %util</span><br><span class="line">    sda               0.60   241.21    0.68   14.04    64.67  2041.76   143.15     0.09    6.17   1.37   2.01</span><br><span class="line">    dm-0              0.00     0.00    0.55    1.49     4.39    11.91     8.00     0.01    5.44   0.34   0.07</span><br><span class="line">    dm-1              0.00     0.00    0.00    0.00     0.01     0.00     7.94     0.00    3.88   1.21   0.00</span><br><span class="line">    dm-2              0.00     0.00    0.01  152.33     0.07  1218.60     8.00     1.56   10.24   0.03   0.39</span><br><span class="line">    dm-3              0.00     0.00    0.17    0.00    27.40     0.00   159.85     0.00    1.91   1.45   0.02</span><br><span class="line">    dm-4              0.00     0.00    0.16   97.30     9.72   778.39     8.09     0.26    2.69   0.08   0.77</span><br><span class="line"></span><br><span class="line">	重点关注： r/s 、w/s、 %util(繁忙程度)</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">	&gt;</span><span class="language-bash">&gt; 将命令结果以二进制格式存放在文件中</span></span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>sar 万能命令<ul>
+<li>功能：linux 全面的系统性能分析工具之一，可以从多方面对系统的活动进行报告</li>
+<li>监控范围： 文件读写情况、系统调用的使用情况、磁盘 I&#x2F;O 、CPU 效率、内存使用情况、进程活动、IPC 有关的活动</li>
+<li>语法：sar [options] [-O file] t n &#x3D;&#x3D;&gt; (options: 命令行选项 t：表示采样间隔时间（必有）；n：表示采样次数（可选，默认 1); -o file: 表示将命令结果以二进制格式存放在文件中，file 表示文件名)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">options 选项： </span><br><span class="line">    -A: 所有报告的总和； </span><br><span class="line">    -u: CPU 利用率； </span><br><span class="line">    -v: 进程、节点、文件和锁表的状态； </span><br><span class="line">    -r：显示系统内存的使用情况</span><br><span class="line">    -B: 内存分页情况</span><br><span class="line">    -b: 缓冲区使用情况（8 份区域）</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="进程追踪命令"><a href="#进程追踪命令" class="headerlink" title="进程追踪命令"></a>进程追踪命令</h4><ul>
+<li>strace<ul>
+<li>功能：集诊断、调试、统计于一体的工具，追踪进程的运行过程</li>
+<li>选项 -p： 跟踪指定进程</li>
+<li>选项 -f: 跟踪由 fork 子进程系统调用</li>
+<li>选项 -c: 统计每一系统调用的所执行的时间，次数和出错的次数等</li>
+<li>选项 -t: 在输出中的每一行前加上时间信息， -tt 时间确定到微秒级</li>
+<li>选项 -e expr: 输出过滤器，通过表达式，可以过滤掉不想要的输出</li>
+<li>选项 -o filename: 默认将结果输出到 stdout,通过 -o 输出到指定文件夹</li>
+</ul>
+</li>
+</ul>
+<h4 id="监控工具-nmon"><a href="#监控工具-nmon" class="headerlink" title="监控工具 nmon"></a>监控工具 nmon</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">说明：</span><br><span class="line">下载：</span><br><span class="line">    wget</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="数据驱动性能测试"><a href="#数据驱动性能测试" class="headerlink" title="数据驱动性能测试"></a>数据驱动性能测试</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">定义：从数据文件中读取测试数据，驱动测试过程的一种测试方法（更高级的参数化）。</span><br><span class="line">特点：</span><br><span class="line">	1. 测试数据与测试代码分离</span><br><span class="line">	2. 数据控制过程</span><br><span class="line">	3. 可以减少测试代码量</span><br><span class="line">	4. 降低脚本开发和维护的成本</span><br><span class="line">	5. 便于用例的修改和维护</span><br><span class="line">要求：</span><br><span class="line">	1. 较强的代码能力</span><br><span class="line">	2. 较强的分层架构设计思维</span><br><span class="line">	3. 对开发框架有一定的了解</span><br><span class="line">使用场景：</span><br><span class="line"> 	1. 复杂的业务流程</span><br><span class="line">    2. 根据业务场景分流</span><br><span class="line">    3. 符合条件的并发场景</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="数据库的架构设计"><a href="#数据库的架构设计" class="headerlink" title="数据库的架构设计"></a>数据库的架构设计</h2><h3 id="数据库性能测试"><a href="#数据库性能测试" class="headerlink" title="数据库性能测试"></a>数据库性能测试</h3><ul>
+<li>测试范围</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. SQL 语句   =&gt; 慢查询等</span><br><span class="line">2. 资源使用率</span><br><span class="line">3. 数据库架构的合理性</span><br><span class="line">4. 数据库的性能指标</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="数据库架构"><a href="#数据库架构" class="headerlink" title="数据库架构"></a>数据库架构</h3><ul>
+<li>一主多从</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">读写分离：</span><br><span class="line">    master(主写，主库)</span><br><span class="line">    ==&gt;复制 slave(从读，从库)</span><br><span class="line">    ==&gt;复制 slave(从读，从库)</span><br><span class="line">缺点： 主从延迟</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>双机热备</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">KeepAlived</span><br><span class="line">    ==&gt; VIP (虚拟 IP)</span><br><span class="line">    ==&gt; master  ==&gt; 复制 ==&gt; slave</span><br><span class="line">缺点：</span><br><span class="line">优点：</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="数据库主从同步的工作原理"><a href="#数据库主从同步的工作原理" class="headerlink" title="数据库主从同步的工作原理"></a>数据库主从同步的工作原理</h3><ol>
+<li>master 将改变记录到二进制（binary log 文件）中</li>
+<li>slave 将 master 的 binary log events 拷贝到它的中继日志（relay log，转换日志）</li>
+<li>slave 重做中继日志中的事件，将改变反映他自己的数据</li>
+</ol>
+<h3 id="数据库分库分表的设计方法"><a href="#数据库分库分表的设计方法" class="headerlink" title="数据库分库分表的设计方法"></a>数据库分库分表的设计方法</h3><p>分库分表原因：<br>    1. 单表或库数据量太大<br>    2. 硬件不能升级或无法升级<br>方案：<br>    1. 业务拆分（用户、商品、订单、 … …）<br>    2. 垂直拆分（商品 &#x3D;&#x3D;&gt; 电子商品、母婴商品、 … …）<br>    3. 水平拆分(一致性哈西算法)<br>    usreid  &#x3D;&#x3D;&gt; userid%3 &#x3D;&#x3D; 1<br>            &#x3D;&#x3D;&gt; userid%3 &#x3D;&#x3D; 2<br>            &#x3D;&#x3D;&gt; userid%3 &#x3D;&#x3D; 3</p>
+<h2 id="数据库性能测试-1"><a href="#数据库性能测试-1" class="headerlink" title="数据库性能测试"></a>数据库性能测试</h2><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><ul>
+<li>MariaDB(主流分支)<ul>
+<li>MySQL 之父 Widenius 创建，目标在于替换现有的 MySQL</li>
+<li>兼容 MySQL, 对于开发者来说感知不到变化</li>
+<li>MariaDB is free and open source software</li>
+</ul>
+</li>
+</ul>
+<h3 id="MySQL-数据库监控指标"><a href="#MySQL-数据库监控指标" class="headerlink" title="MySQL 数据库监控指标"></a>MySQL 数据库监控指标</h3><ul>
+<li>QPS(Queries per seconds)<ul>
+<li>每秒钟查询数量</li>
+<li>show global status like ‘Question%’;</li>
+</ul>
+</li>
+<li>TPS (Transactions Per Second) TPS &#x3D; Com_commit + Com_rollback) &#x2F; seconds<ul>
+<li>show global status like ‘Com_commit’;</li>
+<li>show global status like ‘Com_rollback’;</li>
+</ul>
+</li>
+<li>线程连接数<ul>
+<li>show global status like ‘Max_used_connections’;(使用的最大连接数)</li>
+<li>show global status like ‘Max_connections’;(设置的最大连接数)</li>
+<li>show global status like ‘Threads%’;</li>
+</ul>
+</li>
+<li>Query Cache<ul>
+<li>查询缓存，用于缓存 select 查询结果</li>
+<li>当下次接收到相同查询请求时，不在执行实际查询处理而直接返回结果</li>
+<li>适用于大量查询，很少改变表中的数据</li>
+</ul>
+</li>
+<li>Query Cache 命中率（MySQL 特有）<ul>
+<li>show global status like ‘Qcache%’;</li>
+<li>命中率计算：Query_cache_hits &#x3D; (Qcahce_hits&#x2F;(Qcahce_hits + Qcahce_inserts)) * 100%</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">开启：</span><br><span class="line">1. 修改 my.cnf 文件</span><br><span class="line">2. 将 query_cache_size 设置为具体的大小（取决于查询的实际情况，最好设置为 1024 的倍数，参考值 32M）</span><br><span class="line">3. 增加一行: query_cache_type = 0/1/2</span><br><span class="line">    =&gt; 1 表示缓存所有结果，除非你的 select 语句使用 SQL_NO_CACHE 禁用了查询缓存</span><br><span class="line">    =&gt; 2 表示只缓存在 select 语句中通过 SQL_CACHE 指定需要缓存的查询</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>锁定状态<ul>
+<li>show global status like ‘%lock’;</li>
+<li>table_locks_waited &#x2F; table_lockks_immediate 值越大代表表锁造成的阻塞越严重</li>
+<li>innodb_row_lock_waits innodb 行锁,太大可能是间隙锁造成的</li>
+<li>表锁、行锁、间隙锁</li>
+</ul>
+</li>
+<li>主从延时<ul>
+<li>查询主从延时时间： show slave status</li>
+</ul>
+</li>
+</ul>
+<h3 id="MySQL-慢查询工作原理及操作"><a href="#MySQL-慢查询工作原理及操作" class="headerlink" title="MySQL 慢查询工作原理及操作"></a>MySQL 慢查询工作原理及操作</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">慢查询：</span><br><span class="line">    1. 执行速度超过定义的时间的查询</span><br><span class="line">    2. 不同系统定义不同的慢查询指标</span><br><span class="line">慢查询开启：</span><br><span class="line">    1. 编辑 etc/my.cnf 在 [mysqlid] 域中添加：</span><br><span class="line">    slow_query_log = 1 (开启慢查询)</span><br><span class="line">    2. 设置慢查询日志路径：</span><br><span class="line">    slow_query_log_file = /data/mysql/slow.log</span><br><span class="line">    3. 设置慢查询的时长</span><br><span class="line">    long_query_time = 1</span><br><span class="line">    4. 未使用索引的查询也被记录到慢查询日志中</span><br><span class="line">    log_queries_not_using_indexes = 1</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>慢查询日志分析<ul>
+<li>mysqldumpslow 命令</li>
+<li>-s : 表示按照何种方式排序</li>
+<li>-t : top n 的意思，即返回前面多少条数据</li>
+<li>-g : 后边可写正则匹配模式，大小写不敏感</li>
+</ul>
+</li>
+<li>mysqldumpslow -s 的更多参数<ul>
+<li>c 访问计数</li>
+<li>i 锁定时间</li>
+<li>r 返回记录</li>
+<li>t 查询时间</li>
+<li>al 平均锁定时间</li>
+<li>ar 平均返回记录数</li>
+<li>at 平均查询时间</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">使用：</span><br><span class="line">    1. 得到返回记录集最多的 10 个 SQL</span><br><span class="line">    	mysqldumpslow -s r -t 10 slow.log</span><br><span class="line">    2. 得到访问次数最多最多的 10 个 SQL</span><br><span class="line">    	mysqldumpslow -s c -t 10 slow.log</span><br><span class="line">    3. 得到按照时间排序的前 10 条里面含有左连接的查询语句</span><br><span class="line">    	mysqldumpslow -s t -t 10 -g &quot;left join&quot; slow.log</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>SQL 语句性能分析<ul>
+<li>explain select 语句</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">explain 返回结果分析</span><br><span class="line"><span class="bullet">    1.</span> ID： select 识别符，代表语句的执行顺序，id 数字越大越先执行，如果一样大，从上往下执行</span><br><span class="line"><span class="bullet">    2.</span> select<span class="emphasis">_type: </span></span><br><span class="line"><span class="emphasis">    3. table: 显示查询表名，<span class="language-xml"><span class="tag">&lt;<span class="name">derived</span> <span class="attr">N</span>&gt;</span></span> 临时表</span></span><br><span class="line"><span class="emphasis">    <span class="strong">**4. type: **</span></span></span><br><span class="line"><span class="emphasis">        1) 依次从好到差：<span class="strong">**system, const, eq_ref,**</span> ref, fulltext, ref_</span>or<span class="emphasis">_null, unique_</span>subquery, index<span class="emphasis">_subquery, range, <span class="strong">**index_merge, index, all**</span></span></span><br><span class="line"><span class="emphasis">        2) 除了 all, 其他 type 都可以使用到索引，除了 index_</span>merge（表示查询使用两个以上的索引）, 其他 type 只可以用到一个索引</span><br><span class="line"><span class="bullet">    5.</span> possible<span class="emphasis">_keys: 可能使用的索引</span></span><br><span class="line"><span class="emphasis">    6. key: 真正使用到的索引</span></span><br><span class="line"><span class="emphasis">    7. key_</span>len: </span><br><span class="line"><span class="bullet">    8.</span> ref:</span><br><span class="line"><span class="bullet">    9.</span> rows: 估算的扫描行数</span><br><span class="line"><span class="bullet">    10.</span> extra:</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="MySQL-索引的概念及作用"><a href="#MySQL-索引的概念及作用" class="headerlink" title="MySQL 索引的概念及作用"></a>MySQL 索引的概念及作用</h3><p>[ 索引类型 ]</p>
+<ul>
+<li>主键索引（唯一索引，不允许有空值）</li>
+<li>全文索引（fulltext, MyISAM 表特有）</li>
+<li>唯一索引（值唯一，允许有空值）</li>
+<li>组合索引（多列索引，多列同时创建索引）</li>
+<li>普通索引（无限制）</li>
+</ul>
+<p>[ 索引创建规则 ]</p>
+<ul>
+<li>可以提高查询速度，但是减低插入和更新的速度，并占用磁盘空间</li>
+<li>在插入与更新数据时，要重写索引文件</li>
+<li>单张表索引数量最好不超过 5 个</li>
+<li>单个索引中的字段数不超过 5 个（组合索引）</li>
+<li>不适用索引的查询： like 模糊查询；反向查询，not in &#x2F; not like</li>
+</ul>
+<h3 id="MySQL-存储引擎"><a href="#MySQL-存储引擎" class="headerlink" title="MySQL 存储引擎"></a>MySQL 存储引擎</h3><ul>
+<li>MyISAM（只支持表锁）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">优点：</span><br><span class="line">    1. 读取性能比 innoDB 高</span><br><span class="line">    2. 索引与数据分离，使用压缩，从而提高了内存使用率</span><br><span class="line">缺点：</span><br><span class="line">    1. 不支持事务</span><br><span class="line">    2. 写入数据时，直接锁表（表锁）</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>InnoDB</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">优点：</span><br><span class="line">    1. 支持事务 </span><br><span class="line">    2. 支持外键</span><br><span class="line">    3. 支持行锁</span><br><span class="line">缺点：</span><br><span class="line">    1. 不支持 全文索引</span><br><span class="line">    2. 行锁并不绝对，当不确定扫描范围时，锁全表</span><br><span class="line">    3. 索引与数据捆绑，没有使用压缩，导致体积庞大</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="MySQL-实时监控"><a href="#MySQL-实时监控" class="headerlink" title="MySQL 实时监控"></a>MySQL 实时监控</h3><ul>
+<li>orzdba(监控工具)</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./orzdba 执行</span><br><span class="line">使用：</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="MySQL-集群监控方案-天兔-LEPUS"><a href="#MySQL-集群监控方案-天兔-LEPUS" class="headerlink" title="MySQL 集群监控方案 - 天兔 LEPUS"></a>MySQL 集群监控方案 - 天兔 LEPUS</h3><ul>
+<li>天兔 LEPUS 全部数据库实例监控</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">本地部署： 产品 &gt; 文档中心 &gt; 安装</span><br><span class="line">    admin /Lepusadmin</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="MySQL-性能测试的用例准备"><a href="#MySQL-性能测试的用例准备" class="headerlink" title="MySQL 性能测试的用例准备"></a>MySQL 性能测试的用例准备</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">要点：使用 sql 模拟用户使用场景(增删改查语句)</span><br><span class="line">工具：JMeter</span><br><span class="line">步骤： </span><br><span class="line">    1. JDBC Connection Configuration 配置 MySQL</span><br><span class="line">        Database URL:  jdbc:mysql://192.168.1.7:3306/test</span><br><span class="line">        Driver class:  com.mysql.cj.jdbc.Driver</span><br><span class="line">        Username:</span><br><span class="line">        Password:</span><br><span class="line">    2. JDBC Request 写 SQL 脚本</span><br><span class="line">        select * fom user</span><br></pre></td></tr></table></figure>
+</p></div><div class="post-footer"><div class="tip">本文采用 CC-BY-SA-3.0 协议，转载请注明出处<br>作者: 张小剩</div><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-08-05</span><i class="fa fa-tag"></i><a class="tag" href="/tags/软件测试/" title="软件测试">软件测试 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/性能测试/" title="性能测试">性能测试 </a><span>大约6047个字, 20分钟9秒读完</span></div></div></div></div><div class="share"><div class="share-btn linkonly"><a class="fa fa-link" onclick="Utils.copyToClipboard(window.location.href)" ref="sidebar"></a></div><div class="share-btn evernote"><a class="fa fa-share" onclick="Anatolo.share.native()" ref="sidebar"></a></div><div class="share-btn weibo"><a class="fab fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="share-btn twitter"><a class="fab fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/intent/tweet?text=%E5%88%86%E4%BA%AB%E6%96%87%E7%AB%A0%EF%BC%9A%0A%0A%E5%BC%A0%E5%B0%8F%E5%89%A9%E7%9A%84%E5%8D%9A%E5%AE%A2%20%C2%B7%20%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%0Ahttp://example.com/2023/08/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/%0A"></a></div><div class="share-btn mastodon"><a class="fab fa-mastodon" target="_blank" rel="noopener" href="https://mastodonshare.com/?text=%E5%88%86%E4%BA%AB%E6%96%87%E7%AB%A0%EF%BC%9A%0A%0A%E5%BC%A0%E5%B0%8F%E5%89%A9%E7%9A%84%E5%8D%9A%E5%AE%A2%20%C2%B7%20%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%0Ahttp://example.com/2023/08/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/%0A"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/09/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B5%8B%E8%AF%95/Adb%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Adb 常用命令">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/07/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/linux%20%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" title="Linux 环境搭建">下一篇</a></li></ul></div><script>Anatolo.comment.setConfig({"valine":{"enable":false,"appid":null,"appkey":null,"notify":false,"verify":false,"avatar":"mm","placeholder":"hello, world"},"gitment":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"gitalk":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"duoshuo":null,"disqus":null,"gentie":null})</script></div></div></div></div></main-outlet><script>(async function(){ if (Anatolo.search == null) await Anatolo.getMsg("search-init"); Anatolo.search.config = {translation:{posts:"文章",pages:"页面",categories:"分类",tags:"标签",untitled:"(无标题)",} }; })()</script><div class="searchbox ins-search modal-cover"><div class="searchbox-container ins-search-container modal-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="Anatolo.search.closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div><button class="float-button hide" id="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" type="button" title="回到顶部"><i class="fa fa-angle-up"></i></button><div class="modal-cover" id="success-indicator"><div class="modal-container indicator"><i class="fa fa-check"></i></div></div></body></html>

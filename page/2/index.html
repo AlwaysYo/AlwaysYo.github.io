@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="zh-CN" theme="light"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="张小剩"><title>张小剩的博客</title><meta name="description" content="折腾是一种乐趣，求知是一种追求！"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta id="site_data_static" data-url="/"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/assets/icon/favicon_1.ico"><link rel="stylesheet" href="/js_complied/bundle.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"><script src="/js_complied/bundle.js"></script><script src="/js/baidu-tongji.js"></script><script>Anatolo.comment.setConfig({"valine":{"enable":false,"appid":null,"appkey":null,"notify":false,"verify":false,"avatar":"mm","placeholder":"hello, world"},"gitment":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"gitalk":{"enable":false,"owner":"你的 GitHub ID","repo":"存储评论的 repo","client_id":"你的 client ID","client_secret":"你的 client secret"},"duoshuo":null,"disqus":null,"gentie":null})</script><meta name="generator" content="Hexo 7.3.0"></head><body><main-outlet><div class="page-top animated"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="nav_right_btn"><li class="btn-toggle-more"><i class="fa fa-ellipsis"></i></li><li class="btn-search"><a class="fa fa-search" onclick="Anatolo.search.openWindow();"></a></li><li class="btn-toggle-theme"><a class="far fa-sun" onclick="Anatolo.toggleDarkLightTheme();"></a></li></div><div class="avatar"><img src="/assets/images/Avatar_20250419_300889.jpg"></div></div></div><div class="sidebar animated"><div class="sidebar-top"><div class="logo-title"><div class="title"><div class="logo" style="width:220px;height:220px;"><div class="polygon-box1"><div class="polygon-box2"><img class="polygon-img" src="/assets/images/Avatar_20250419_300889.jpg" alt="logo"></div></div></div><h3 title="" style="margin: 2rem"><a href="/">张小剩的博客</a></h3><div class="description"><p>折腾是一种乐趣，求知是一种追求！</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/alwaysyo"><i class="fab fa-github"></i></a></li><li><a href="mailto:zhxy_chn@126.com"><i class="fa fa-envelope"></i></a></li><li><a href><i class="fa fa-rss"></i></a></li></ul><div class="blog-time"><div id="clock-container"><canvas id="canvas-time" style="width: 80%; margin-top: 2em" width="700"></canvas></div><script type="text/javascript" charset="utf-8" src="/js/digit-time.js"></script><div class="footer-aside-box description" style="font-size: 12px; margin: 0.5em"><i class="fa fa-cog fa-spin"></i><span id="runtime"></span><script type="text/javascript" charset="utf-8" src="/js/run-time.js"></script></div></div></div></div><div class="footer"><div class="p"><span style="margin-right: 5px">全站 CC-BY-SA-3.0</span><i class="fa fa-star"></i><span style="margin-left: 5px">张小剩</span></div><div class="by_farbox"><span style="margin-right: 5px">Powered by</span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo</a><span style="margin-right: 5px; margin-left: 5px">& Theme modified from</span><a href="https://github.com/Lhcfl/hexo-theme-anatolo" target="_blank">Anatolo</a></div><div class="beian"></div></div></div><div class="main animated fadeInDown"><div class="autopagerize_page_element"><div class="content"><div class="post animated"><div class="post-title"><h3><a href="/2024/10/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%B7%A5%E5%85%B7%E6%B5%81/Git/Git_%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">Git 版本控制</a></h3></div><div class="post-content"><p>版本控制初始化一个Git仓库1git init
+
+添加文件到Git仓库12git add &lt;file&gt;git commit -m &quot;description&quot;
+
+git add可以反复多次使用，添加多个文件，git commit可以一次提交很多文件，-m后面输入的是本次提交说明。
+添...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-10-01</span><i class="fa fa-tag"></i><a class="tag" href="/tags/工具相关/" title="工具相关">工具相关 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Git/" title="Git">Git </a><span>大约548个字, 1分钟49秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2024/09/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%B7%A5%E5%85%B7%E6%B5%81/Docker/Docker%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Docker 命令总结</a></h3></div><div class="post-content"><p>Docker 基本命令镜像相关命令
+本地镜像查看
+
+12docker images
+
+
+远端镜像查看
+
+12# docker search nginx$ docker search [keyword]
+
+
+远端镜像下载
+
+12docker pull nginx
+
+
+删除 images（镜像），通过 image 的...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-09-11</span><i class="fa fa-tag"></i><a class="tag" href="/tags/工具相关/" title="工具相关">工具相关 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Docker/" title="Docker">Docker </a><span>大约295个字, 59秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2024/09/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%B0%8F%E4%B8%93%E6%A0%8F/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/">软件测试工具</a></h3></div><div class="post-content"><p>自动化测试**需求：**通过 url 或文件导入项目的接口
+需求扩展：
+
+支持导入功能
+
+导入的接口支持 mock （可自定义勾选）
+
+
+支持导出功能 （可自定义勾选）
+
+可导出为 json 文件
+可导出为 代码 或 **.py 文件（对接接口自动化的 data 层文件）
+
+
+可以对系统的接口进行监听
+
+接口变动...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-09-05</span><i class="fa fa-tag"></i><a class="tag" href="/tags/工具相关/" title="工具相关">工具相关 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/软件测试/" title="软件测试">软件测试 </a><span>大约428个字, 1分钟25秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2024/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/Windows%20%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">Windows 常见问题总结</a></h3></div><div class="post-content"><p>Windows 清理清理 WinSxS 文件夹在powershell窗口中输入命令：
+1dism.exe /online /Cleanup-Image /StartComponentCleanup
+
+
+
+让英文文件夹显示的是中文名称desktop.ini 文件配置：
+[.ShellClassInfo]Locali...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-08-22</span><i class="fa fa-tag"></i><a class="tag" href="/tags/操作系统/" title="操作系统">操作系统 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Windows/" title="Windows">Windows </a><span>大约969个字, 3分钟13秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2024/08/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%20Locust/">Locust 性能测试</a></h3></div><div class="post-content"><p>Locust 安装及运行
+创建虚拟环境，并进入
+
+1234567$ pip install locustio==0.14.6  (0.14.6 版本安装)$ pip install locust  (最新版本安装)$$ 报错： error: Microsoft Visual C++ 14.0 is require...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-08-05</span><i class="fa fa-tag"></i><a class="tag" href="/tags/软件测试/" title="软件测试">软件测试 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/性能测试/" title="性能测试">性能测试 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Locust/" title="Locust">Locust </a><span>大约661个字, 2分钟12秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2024/07/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%80%A7%E8%83%BD%E5%8E%8B%E6%B5%8B/">自动化性能压测</a></h3></div><div class="post-content"><p>JMeter 脚本优化变量修改
+线程数修改为变量 threadNum,  利用函数助手$&#123;__P(threadNum,1)&#125;
+Ramp-UP 时间修改为变量 rampUP,  利用函数助手$&#123;__P(rampUP,1)&#125;
+持续时间修改为变量 ontime,  利用函数助手$...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-07-16</span><i class="fa fa-tag"></i><a class="tag" href="/tags/软件测试/" title="软件测试">软件测试 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/性能测试/" title="性能测试">性能测试 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Jmeter/" title="Jmeter">Jmeter </a><span>大约157个字, 31秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2024/07/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/ApiPytest/">Pytest 自动化测试框架</a></h3></div><div class="post-content"><p>Pytest 基础用法12345# conda conda install pytest# pythonpip3 install pytest
+
+Pytest 用例命名规范
+测试文件必须以 “test_” 开头（或者 “_test” 结尾）
+
+如果直接运行文件，有目的文件，文件名不需要添加 test_ 关键字
+
+...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-07-05</span><i class="fa fa-tag"></i><a class="tag" href="/tags/软件测试/" title="软件测试">软件测试 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/自动化测试/" title="自动化测试">自动化测试 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Pytest-系列/" title="Pytest 系列">Pytest 系列 </a><span>大约5991个字, 19分钟58秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2024/07/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/Windows%20%E5%B8%B8%E7%94%A8%20DOS%20%E5%91%BD%E4%BB%A4/">Windows 常用 DOS 命令</a></h3></div><div class="post-content"><p>
+修改文件大小（将其他文件的大小合并到需要扩充的文件）
+
+12$ copy img.jpg /b + music.mp3 10Mimg.jpg# copy 原图名称 /b + 需要扩充的文件名称 新图名称
+
+
+
+查看以太网物理地址（MAC）
+
+1ipconfig/all
+
+
+IP 地址与物理地址的对应关系
+
+1a...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-07-04</span><i class="fa fa-tag"></i><a class="tag" href="/tags/操作系统/" title="操作系统">操作系统 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Windows/" title="Windows">Windows </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Dos/" title="Dos">Dos </a><span>大约212个字, 42秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2024/04/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%B7%A5%E5%85%B7%E6%B5%81/Docker/Docker%20%E9%83%A8%E7%BD%B2/">Docker 部署方法总结</a></h3></div><div class="post-content"><p>Docker 简介Docker 是什么？
+基本概念
+
+镜像（image）： 相当于一个 root 文件系统
+容器（container）： 是镜像运行的实体（镜像和容器的关系就像是面向对象编程中的类和实例一样）
+仓库（repository）:  可看作是一个代码控制中心， 用来保存镜像
+
+Docker 安装Dock...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-04-23</span><i class="fa fa-tag"></i><a class="tag" href="/tags/工具相关/" title="工具相关">工具相关 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Docker/" title="Docker">Docker </a><span>大约1214个字, 4分钟2秒读完</span></div></div></div></div><div class="post animated"><div class="post-title"><h3><a href="/2024/04/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7%E5%B9%B3%E5%8F%B0/">性能监控平台搭建</a></h3></div><div class="post-content"><p>性能监控平台  InfluxDB + Grafana</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-04-05</span><i class="fa fa-tag"></i><a class="tag" href="/tags/工具相关/" title="工具相关">工具相关 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/软件测试/" title="软件测试">软件测试 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/性能测试/" title="性能测试">性能测试 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Jmeter/" title="Jmeter">Jmeter </a><i class="fa fa-tag"></i><a class="tag" href="/tags/InfluxDB/" title="InfluxDB">InfluxDB </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Grafana/" title="Grafana">Grafana </a><span>大约617个字, 2分钟3秒读完</span></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/">上一页</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/page/3/">下一页</a></li></ul></div></div></div></div></main-outlet><script>(async function(){ if (Anatolo.search == null) await Anatolo.getMsg("search-init"); Anatolo.search.config = {translation:{posts:"文章",pages:"页面",categories:"分类",tags:"标签",untitled:"(无标题)",} }; })()</script><div class="searchbox ins-search modal-cover"><div class="searchbox-container ins-search-container modal-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="Anatolo.search.closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div><button class="float-button hide" id="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" type="button" title="回到顶部"><i class="fa fa-angle-up"></i></button><div class="modal-cover" id="success-indicator"><div class="modal-container indicator"><i class="fa fa-check"></i></div></div></body></html>
